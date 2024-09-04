@@ -1,0 +1,6 @@
+@ApiSSK_HostAddress = https://localhost:7270
+
+GET {{ApiSSK_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
