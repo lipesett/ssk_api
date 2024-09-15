@@ -20,9 +20,11 @@ namespace ApiSSK.Controllers
                     DivId = 1,
                     InsDataInscricao = new DateTime(2024, 9, 1),
                     InsPago = 1,
+                    TemId = 1,
                     Piloto = new Piloto(){ PilId = 1 },
                     Categoria = new Categoria(){ CatId = 1 },
-                    Divisao = new Divisao(){ DivId = 1 }
+                    Divisao = new Divisao(){ DivId = 1 },
+                    Temporada = new Temporada(){ TemId = 1 }
                 },
                 new Inscricao()
                 {
@@ -32,9 +34,11 @@ namespace ApiSSK.Controllers
                     DivId = 2,
                     InsDataInscricao = new DateTime(2024, 9, 2),
                     InsPago = 0,
+                    TemId = 1,
                     Piloto = new Piloto(){ PilId = 2 },
                     Categoria = new Categoria(){ CatId = 2 },
-                    Divisao = new Divisao(){ DivId = 2 }
+                    Divisao = new Divisao(){ DivId = 2 },
+                    Temporada = new Temporada(){ TemId = 1 }
                 }
             };
 
