@@ -1,4 +1,4 @@
-﻿public partial class Temporada
+﻿public partial class TemporadaModel
 {
     public int TemId { get; set; }
     public int TemNumTem { get; set; }

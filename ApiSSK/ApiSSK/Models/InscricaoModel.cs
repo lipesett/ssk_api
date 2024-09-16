@@ -1,15 +1,15 @@
 ﻿public partial class InscricaoModel
 {
     public int InsId { get; set; }
-    public int PilId { get; set; }
-    public int CatId { get; set; }
-    public int DivId { get; set; }
     public DateTime InsDataInscricao { get; set; }
     public int? InsPago { get; set; }
-    public int TemId { get; set; }
+    public int TemporadaId { get; set; }
+    public int PilotoId { get; set; }
+    public int CategoriaId { get; set; }
+    public int DivisaoId { get; set; }
 
-    public virtual PilotoModel Piloto { get; set; } = null!;
-    public virtual CategoriaModel Categoria { get; set; } = null!;
-    public virtual DivisaoModel Divisao { get; set; } = null!;
-    public virtual Temporada Temporada { get; set; } = null!;
+    public virtual PilotoModel Piloto { get; set; }
+    public virtual CategoriaModel Categoria { get; set; }
+    public virtual DivisaoModel Divisao { get; set; }
+    public virtual TemporadaModel Temporada { get; set; }
 }

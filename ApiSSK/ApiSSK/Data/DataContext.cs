@@ -17,13 +17,14 @@ namespace ApiSSK.Data
         public DbSet<InscricaoModel> Inscricoes { get; set; }
         public DbSet<KartodromoModel> Kartodromos { get; set; }
         public DbSet<MelhorVoltaModel> MelhoresVoltas { get; set; }
+        public DbSet<MelhorVoltaDescModel> MelhoresVoltasDesc { get; set; }
         public DbSet<PilotoModel> Pilotos { get; set; }
-        public DbSet<Pontuacao> Pontuacoes { get; set; }
-        public DbSet<PontuacaoPilotoEtapa> PontuacoesEtapa { get; set; }
-        public DbSet<Sentido> Sentidos { get; set; }
-        public DbSet<Status> Status { get; set; }
-        public DbSet<Temporada> Temporadas { get; set; }
-        public DbSet<Tracado> Tracados { get; set; }
+        public DbSet<PontuacaoModel> Pontuacoes { get; set; }
+        public DbSet<PontuacaoPilotoEtapaModel> PontuacoesEtapa { get; set; }
+        public DbSet<SentidoModel> Sentidos { get; set; }
+        public DbSet<StatusModel> Status { get; set; }
+        public DbSet<TemporadaModel> Temporadas { get; set; }
+        public DbSet<TracadoModel> Tracados { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +32,18 @@ namespace ApiSSK.Data
             modelBuilder.ApplyConfiguration(new CategoriaDivisaoMap());
             modelBuilder.ApplyConfiguration(new CategoriaMap());
             modelBuilder.ApplyConfiguration(new ClimaMap());
+            modelBuilder.ApplyConfiguration(new DivisaoMap());
+            modelBuilder.ApplyConfiguration(new InscricaoMap());
+            modelBuilder.ApplyConfiguration(new KartodromoMap());
+            modelBuilder.ApplyConfiguration(new MelhorVoltaMap());
+            modelBuilder.ApplyConfiguration(new MelhorVoltaDescMap());
+            modelBuilder.ApplyConfiguration(new PilotoMap());
+            //modelBuilder.ApplyConfiguration(new ClimaMap());
+            //modelBuilder.ApplyConfiguration(new ClimaMap());
+            //modelBuilder.ApplyConfiguration(new ClimaMap());
+            //modelBuilder.ApplyConfiguration(new ClimaMap());
+            //modelBuilder.ApplyConfiguration(new ClimaMap());
+            //modelBuilder.ApplyConfiguration(new ClimaMap());
 
             base.OnModelCreating(modelBuilder);
         }

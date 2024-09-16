@@ -1,4 +1,4 @@
-﻿public partial class Tracado
+﻿public partial class TracadoModel
 {
     public int TraId { get; set; }
     public string TraNome { get; set; } = null!;

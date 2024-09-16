@@ -1,4 +1,4 @@
-﻿public partial class Pontuacao
+﻿public partial class PontuacaoModel
 {
     public int PonId { get; set; }
     public int PonPosicao { get; set; }
