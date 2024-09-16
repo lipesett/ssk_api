@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-public partial class MelhorVoltaModel
+﻿public partial class MelhorVoltaModel
 {
     public int MvId { get; set; }
     public string MvTempo { get; set; } = null!;
