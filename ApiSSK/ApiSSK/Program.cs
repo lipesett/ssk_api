@@ -18,6 +18,7 @@ builder.Services.AddEntityFrameworkSqlServer()
     );
 
 builder.Services.AddScoped<ICalendarioRepository, CalendarioRepository>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
 var app = builder.Build();
 
