@@ -30,6 +30,7 @@ namespace ApiSSK.Data
             modelBuilder.ApplyConfiguration(new CalendarioMap());
             modelBuilder.ApplyConfiguration(new CategoriaDivisaoMap());
             modelBuilder.ApplyConfiguration(new CategoriaMap());
+            modelBuilder.ApplyConfiguration(new ClimaMap());
 
             base.OnModelCreating(modelBuilder);
         }
