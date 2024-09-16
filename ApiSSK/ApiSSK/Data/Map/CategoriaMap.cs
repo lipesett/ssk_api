@@ -11,7 +11,7 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.CatNome).IsRequired().HasMaxLength(200);
             builder.Property(x => x.StatusId).IsRequired();
 
-            builder.Property(x => x.Status);
+            builder.HasOne(x => x.Status);
         }
     }
 }

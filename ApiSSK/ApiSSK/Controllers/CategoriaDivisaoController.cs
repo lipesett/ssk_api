@@ -14,15 +14,15 @@ namespace ApiSSK.Controllers
             {
                 new CategoriaDivisaoModel()
                 {
-                    CatId = 1,
-                    DivId = 1,
+                    CategoriaId = 1,
+                    DivisaoId = 1,
                     Categoria = new CategoriaModel(){ CatId = 1 },
                     Divisao = new DivisaoModel(){ DivId = 1 }
                 },
                 new CategoriaDivisaoModel()
                 {
-                    CatId = 2,
-                    DivId = 2,
+                    CategoriaId = 2,
+                    DivisaoId = 2,
                     Categoria = new CategoriaModel(){ CatId = 2 },
                     Divisao = new DivisaoModel(){ DivId = 2 }
                 }
