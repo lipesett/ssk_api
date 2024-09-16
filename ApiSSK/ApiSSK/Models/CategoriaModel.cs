@@ -1,4 +1,4 @@
-﻿public partial class Categoria
+﻿public partial class CategoriaModel
 {
     public int CatId { get; set; }
     public string CatNome { get; set; } = null!;

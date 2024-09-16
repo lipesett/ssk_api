@@ -8,25 +8,25 @@ namespace ApiSSK.Controllers
     public class CategoriaController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Categoria>>> GetAllCategorias()
+        public async Task<ActionResult<List<CategoriaModel>>> GetAllCategorias()
         {
-            var categorias = new List<Categoria>()
+            var categorias = new List<CategoriaModel>()
             {
-                new Categoria()
+                new CategoriaModel()
                 {
                     CatId = 1,
                     CatNome = "Categoria Borracha",
                     StaId = 1,
                     Status = new Status { StaId = 1, StaDesc = "Ativo" }
                 },
-                new Categoria()
+                new CategoriaModel()
                 {
                     CatId = 2,
                     CatNome = "Categoria Senna",
                     StaId = 1,
                     Status = new Status { StaId = 1, StaDesc = "Ativo" }
                 },
-                new Categoria()
+                new CategoriaModel()
                 {
                     CatId = 3,
                     CatNome = "Categoria Binnoto",

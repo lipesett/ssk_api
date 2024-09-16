@@ -7,7 +7,7 @@
     public string? PpeTempoMelhorVolta { get; set; }
     public bool MelhorVolta { get; set; }
 
-    public virtual Piloto Piloto { get; set; } = null!;
-    public virtual Calendario Calendario { get; set; } = null!;
+    public virtual PilotoModel Piloto { get; set; } = null!;
+    public virtual CalendarioModel Calendario { get; set; } = null!;
     public virtual Pontuacao Pontuacao { get; set; } = null!;
 }

@@ -1,4 +1,4 @@
-﻿public partial class Piloto
+﻿public partial class PilotoModel
 {
     public int PilId { get; set; }
     public string PilNome { get; set; } = null!;

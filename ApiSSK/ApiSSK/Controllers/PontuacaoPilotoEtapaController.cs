@@ -20,8 +20,8 @@ namespace ApiSSK.Controllers
                     PonId = 1,
                     PpeTempoMelhorVolta = "01:23.456",
                     MelhorVolta = true,
-                    Piloto = new Piloto(){ PilId = 1 },
-                    Calendario = new Calendario(){ CalId = 1 },
+                    Piloto = new PilotoModel(){ PilId = 1 },
+                    Calendario = new CalendarioModel(){ CalId = 1 },
                     Pontuacao = new Pontuacao(){ PonId = 1 }
                 },
                 new PontuacaoPilotoEtapa()
@@ -32,8 +32,8 @@ namespace ApiSSK.Controllers
                     PonId = 2,
                     PpeTempoMelhorVolta = "01:24.789",
                     MelhorVolta = false,
-                    Piloto = new Piloto(){ PilId = 2 },
-                    Calendario = new Calendario(){ CalId = 2 },
+                    Piloto = new PilotoModel(){ PilId = 2 },
+                    Calendario = new CalendarioModel(){ CalId = 2 },
                     Pontuacao = new Pontuacao(){ PonId = 2 }
                 }
             };

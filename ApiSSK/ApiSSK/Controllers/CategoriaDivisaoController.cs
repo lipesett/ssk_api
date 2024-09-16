@@ -8,23 +8,23 @@ namespace ApiSSK.Controllers
     public class CategoriaDivisaoController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<CategoriaDivisao>>> GetAllCategoriasDivisoes()
+        public async Task<ActionResult<List<CategoriaDivisaoModel>>> GetAllCategoriasDivisoes()
         {
-            var cXd = new List<CategoriaDivisao>()
+            var cXd = new List<CategoriaDivisaoModel>()
             {
-                new CategoriaDivisao()
+                new CategoriaDivisaoModel()
                 {
                     CatId = 1,
                     DivId = 1,
-                    Categoria = new Categoria(){ CatId = 1 },
-                    Divisao = new Divisao(){ DivId = 1 }
+                    Categoria = new CategoriaModel(){ CatId = 1 },
+                    Divisao = new DivisaoModel(){ DivId = 1 }
                 },
-                new CategoriaDivisao()
+                new CategoriaDivisaoModel()
                 {
                     CatId = 2,
                     DivId = 2,
-                    Categoria = new Categoria(){ CatId = 2 },
-                    Divisao = new Divisao(){ DivId = 2 }
+                    Categoria = new CategoriaModel(){ CatId = 2 },
+                    Divisao = new DivisaoModel(){ DivId = 2 }
                 }
             };
 

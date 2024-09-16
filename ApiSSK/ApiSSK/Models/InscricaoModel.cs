@@ -1,4 +1,4 @@
-﻿public partial class Inscricao
+﻿public partial class InscricaoModel
 {
     public int InsId { get; set; }
     public int PilId { get; set; }
@@ -8,8 +8,8 @@
     public int? InsPago { get; set; }
     public int TemId { get; set; }
 
-    public virtual Piloto Piloto { get; set; } = null!;
-    public virtual Categoria Categoria { get; set; } = null!;
-    public virtual Divisao Divisao { get; set; } = null!;
+    public virtual PilotoModel Piloto { get; set; } = null!;
+    public virtual CategoriaModel Categoria { get; set; } = null!;
+    public virtual DivisaoModel Divisao { get; set; } = null!;
     public virtual Temporada Temporada { get; set; } = null!;
 }

@@ -1,4 +1,4 @@
-﻿public partial class Kartodromo
+﻿public partial class KartodromoModel
 {
     public int KarId { get; set; }
     public string KarNome { get; set; } = null!;

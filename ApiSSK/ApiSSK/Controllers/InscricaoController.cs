@@ -8,11 +8,11 @@ namespace ApiSSK.Controllers
     public class InscricaoController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Inscricao>>> GetAllInscricoes()
+        public async Task<ActionResult<List<InscricaoModel>>> GetAllInscricoes()
         {
-            var inscricao = new List<Inscricao>()
+            var inscricao = new List<InscricaoModel>()
             {
-                new Inscricao()
+                new InscricaoModel()
                 {
                     InsId = 1,
                     PilId = 1,
@@ -21,12 +21,12 @@ namespace ApiSSK.Controllers
                     InsDataInscricao = new DateTime(2024, 9, 1),
                     InsPago = 1,
                     TemId = 1,
-                    Piloto = new Piloto(){ PilId = 1 },
-                    Categoria = new Categoria(){ CatId = 1 },
-                    Divisao = new Divisao(){ DivId = 1 },
+                    Piloto = new PilotoModel(){ PilId = 1 },
+                    Categoria = new CategoriaModel(){ CatId = 1 },
+                    Divisao = new DivisaoModel(){ DivId = 1 },
                     Temporada = new Temporada(){ TemId = 1 }
                 },
-                new Inscricao()
+                new InscricaoModel()
                 {
                     InsId = 2,
                     PilId = 2,
@@ -35,9 +35,9 @@ namespace ApiSSK.Controllers
                     InsDataInscricao = new DateTime(2024, 9, 2),
                     InsPago = 0,
                     TemId = 1,
-                    Piloto = new Piloto(){ PilId = 2 },
-                    Categoria = new Categoria(){ CatId = 2 },
-                    Divisao = new Divisao(){ DivId = 2 },
+                    Piloto = new PilotoModel(){ PilId = 2 },
+                    Categoria = new CategoriaModel(){ CatId = 2 },
+                    Divisao = new DivisaoModel(){ DivId = 2 },
                     Temporada = new Temporada(){ TemId = 1 }
                 }
             };

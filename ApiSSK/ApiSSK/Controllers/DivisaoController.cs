@@ -8,25 +8,25 @@ namespace ApiSSK.Controllers
     public class DivisaoController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Divisao>>> GetAllDivisao()
+        public async Task<ActionResult<List<DivisaoModel>>> GetAllDivisao()
         {
-            var divisao = new List<Divisao>()
+            var divisao = new List<DivisaoModel>()
             {
-                new Divisao()
+                new DivisaoModel()
                 {
                     DivId = 1,
                     DivNome = "Divisão 80kg",
                     StaId = 1,
                     Status = new Status() { StaId = 1, StaDesc = "Ativo" }
                 },
-                new Divisao()
+                new DivisaoModel()
                 {
                     DivId = 1,
                     DivNome = "Divisão 95kg",
                     StaId = 1,
                     Status = new Status() { StaId = 1, StaDesc = "Ativo" }
                 },
-                new Divisao()
+                new DivisaoModel()
                 {
                     DivId = 1,
                     DivNome = "Divisão 110kg",

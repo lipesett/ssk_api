@@ -10,9 +10,9 @@
     public int? MvRecordId { get; set; }
     public string? TraImg { get; set; }
 
-    public virtual Kartodromo Kartodromo { get; set; } = null!;
+    public virtual KartodromoModel Kartodromo { get; set; } = null!;
     public virtual Sentido? Sentido { get; set; }
-    public virtual Clima? Clima { get; set; }
-    public virtual MelhorVolta? MvEstreia { get; set; }
-    public virtual MelhorVolta? MvRecord { get; set; }
+    public virtual ClimaModel? Clima { get; set; }
+    public virtual MelhorVoltaModel? MvEstreia { get; set; }
+    public virtual MelhorVoltaModel? MvRecord { get; set; }
 }

@@ -8,11 +8,11 @@ namespace ApiSSK.Controllers
     public class PilotoController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Piloto>>> GetAllPilotos()
+        public async Task<ActionResult<List<PilotoModel>>> GetAllPilotos()
         {
-            var pilotos = new List<Piloto>()
+            var pilotos = new List<PilotoModel>()
             {
-                new Piloto()
+                new PilotoModel()
                 {
                     PilId = 1,
                     PilNome = "Rodrigo",
@@ -30,7 +30,7 @@ namespace ApiSSK.Controllers
                     StaId = 1,
                     Status = new Status(){ StaId = 1, StaDesc = "Ativo" }
                 },
-                new Piloto()
+                new PilotoModel()
                 {
                     PilId = 1,
                     PilNome = "Felipe",

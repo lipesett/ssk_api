@@ -8,21 +8,21 @@ namespace ApiSSK.Controllers
     public class ClimaController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Clima>>> GetAllClimas()
+        public async Task<ActionResult<List<ClimaModel>>> GetAllClimas()
         {
-            var climas = new List<Clima>()
+            var climas = new List<ClimaModel>()
             {
-                new Clima()
+                new ClimaModel()
                 {
                     CliId = 1,
                     CliDesc = "Seco"
                 },
-                new Clima()
+                new ClimaModel()
                 {
                     CliId = 2,
                     CliDesc = "Misto"
                 },
-                new Clima()
+                new ClimaModel()
                 {
                     CliId = 3,
                     CliDesc = "Chuva"

@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-public partial class MelhorVolta
+public partial class MelhorVoltaModel
 {
     public int MvId { get; set; }
     public string MvTempo { get; set; } = null!;
@@ -9,7 +9,7 @@ public partial class MelhorVolta
     public int? CliClima { get; set; }
     public int? CalNumeroEtapa { get; set; }
 
-    public virtual Piloto Piloto { get; set; } = null!;
-    public virtual Clima? Clima { get; set; }
-    public virtual Calendario? Calendario { get; set; }
+    public virtual PilotoModel Piloto { get; set; } = null!;
+    public virtual ClimaModel? Clima { get; set; }
+    public virtual CalendarioModel? Calendario { get; set; }
 }

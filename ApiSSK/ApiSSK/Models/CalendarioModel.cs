@@ -1,4 +1,4 @@
-﻿public partial class Calendario
+﻿public partial class CalendarioModel
 {
     public int CalId { get; set; }
     public string CalNomeEtapa { get; set; } = null!;
@@ -16,5 +16,5 @@
 
     public virtual Tracado Tracado { get; set; } = null!;
     public virtual Temporada Temporada { get; set; } = null!;
-    public virtual Piloto PilotoVencedor { get; set; } = null!;
+    public virtual PilotoModel PilotoVencedor { get; set; } = null!;
 }

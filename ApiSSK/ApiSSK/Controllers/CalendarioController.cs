@@ -8,11 +8,11 @@ namespace ApiSSK.Controllers
     public class CalendarioController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Calendario>>> GetAllCalendarios()
+        public async Task<ActionResult<List<CalendarioModel>>> GetAllCalendarios()
         {
-            var calendario = new List<Calendario>()
+            var calendario = new List<CalendarioModel>()
             {
-                new Calendario()
+                new CalendarioModel()
                 {
                     CalId = 1,
                     CalNomeEtapa = "Etapa 1",
@@ -29,7 +29,7 @@ namespace ApiSSK.Controllers
                     PilPilotoVencedor = 1,
                     Tracado = new Tracado { TraId = 1 },
                     Temporada = new Temporada { TemId = 1 },
-                    PilotoVencedor = new Piloto { PilId = 1 }
+                    PilotoVencedor = new PilotoModel { PilId = 1 }
                 }
             };
 

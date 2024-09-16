@@ -8,18 +8,18 @@ namespace ApiSSK.Controllers
     public class KartodromoController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Kartodromo>>> GetAllKartodromos()
+        public async Task<ActionResult<List<KartodromoModel>>> GetAllKartodromos()
         {
-            var kartodromos = new List<Kartodromo>()
+            var kartodromos = new List<KartodromoModel>()
             {
-                new Kartodromo()
+                new KartodromoModel()
                 {
                     KarId = 1,
                     KarNome = "Kartódromo Granja Viana",
                     KarApelido = "Granja Viana",
                     KarNomCurto = "KGV"
                 },
-                new Kartodromo()
+                new KartodromoModel()
                 {
                     KarId = 2,
                     KarNome = "Kartódromo Nova Odessa",

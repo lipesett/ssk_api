@@ -23,10 +23,10 @@ namespace ApiSSK.Controllers
                     MvEstreiaId = 1,
                     MvRecordId = 2,
                     SenSentido = 1,
-                    Clima = new Clima(){ CliId = 1},
-                    Kartodromo = new Kartodromo(){ KarId = 1},
-                    MvEstreia = new MelhorVolta(){ MvId = 1},
-                    MvRecord = new MelhorVolta(){ MvId = 2},
+                    Clima = new ClimaModel(){ CliId = 1},
+                    Kartodromo = new KartodromoModel(){ KarId = 1},
+                    MvEstreia = new MelhorVoltaModel(){ MvId = 1},
+                    MvRecord = new MelhorVoltaModel(){ MvId = 2},
                     Sentido = new Sentido(){ SenId = 1}
                 },
                 new Tracado()
@@ -40,10 +40,10 @@ namespace ApiSSK.Controllers
                     MvEstreiaId = 1,
                     MvRecordId = 2,
                     SenSentido = 2,
-                    Clima = new Clima(){ CliId = 2},
-                    Kartodromo = new Kartodromo(){ KarId = 1},
-                    MvEstreia = new MelhorVolta(){ MvId = 1},
-                    MvRecord = new MelhorVolta(){ MvId = 2},
+                    Clima = new ClimaModel(){ CliId = 2},
+                    Kartodromo = new KartodromoModel(){ KarId = 1},
+                    MvEstreia = new MelhorVoltaModel(){ MvId = 1},
+                    MvRecord = new MelhorVoltaModel(){ MvId = 2},
                     Sentido = new Sentido(){ SenId = 2}
                 }
             };

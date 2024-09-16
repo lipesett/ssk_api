@@ -8,11 +8,11 @@ namespace ApiSSK.Controllers
     public class MelhorVoltaController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<MelhorVolta>>> GetAllMelhoresVoltas()
+        public async Task<ActionResult<List<MelhorVoltaModel>>> GetAllMelhoresVoltas()
         {
-            var mv = new List<MelhorVolta>()
+            var mv = new List<MelhorVoltaModel>()
             {
-                new MelhorVolta()
+                new MelhorVoltaModel()
                 {
                     MvId = 1,
                     MvTipo = "Estreia",
@@ -20,11 +20,11 @@ namespace ApiSSK.Controllers
                     PilMv = 1,
                     CliClima = 1,
                     CalNumeroEtapa = 1,
-                    Piloto = new Piloto() { PilId = 1 },
-                    Clima = new Clima() { CliId = 1 },
-                    Calendario = new Calendario() { CalId = 1 }
+                    Piloto = new PilotoModel() { PilId = 1 },
+                    Clima = new ClimaModel() { CliId = 1 },
+                    Calendario = new CalendarioModel() { CalId = 1 }
                 },
-                new MelhorVolta()
+                new MelhorVoltaModel()
                 {
                     MvId = 2,
                     MvTipo = "Recorde",
@@ -32,9 +32,9 @@ namespace ApiSSK.Controllers
                     PilMv = 2,
                     CliClima = 1,
                     CalNumeroEtapa = 11,
-                    Piloto = new Piloto() { PilId = 2 },
-                    Clima = new Clima() { CliId = 1 },
-                    Calendario = new Calendario() { CalId = 11 }
+                    Piloto = new PilotoModel() { PilId = 2 },
+                    Clima = new ClimaModel() { CliId = 1 },
+                    Calendario = new CalendarioModel() { CalId = 11 }
                 }
             };
 

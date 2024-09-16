@@ -1,4 +1,4 @@
-﻿public partial class Divisao
+﻿public partial class DivisaoModel
 {
     public int DivId { get; set; }
     public string DivNome { get; set; } = null!;
