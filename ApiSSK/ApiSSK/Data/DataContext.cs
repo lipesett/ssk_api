@@ -28,6 +28,7 @@ namespace ApiSSK.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CalendarioMap());
+            modelBuilder.ApplyConfiguration(new CategoriaMap());
 
             base.OnModelCreating(modelBuilder);
         }
