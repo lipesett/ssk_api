@@ -24,12 +24,12 @@ namespace ApiSSK.Controllers
                     CalHorario = new TimeSpan(10, 30, 0),
                     CalPtsDisputados = 41,
                     CalEtapaRealizada = true,
-                    TraTracado = 1,
-                    TemTemporada = 2024,
-                    PilPilotoVencedor = 1,
+                    TracadoId = 1,
+                    TemporadaId = 2024,
+                    PilotoId = 1,
                     Tracado = new Tracado { TraId = 1 },
                     Temporada = new Temporada { TemId = 1 },
-                    PilotoVencedor = new PilotoModel { PilId = 1 }
+                    Piloto = new PilotoModel { PilId = 1 }
                 }
             };
 

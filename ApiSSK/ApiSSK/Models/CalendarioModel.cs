@@ -10,11 +10,11 @@
     public TimeSpan CalHorario { get; set; }
     public int CalPtsDisputados { get; set; }
     public bool CalEtapaRealizada { get; set; }
-    public int TraTracado { get; set; }
-    public int TemTemporada { get; set; }
-    public int PilPilotoVencedor { get; set; }
+    public int? TracadoId { get; set; }
+    public int TemporadaId { get; set; }
+    public int? PilotoId { get; set; }
 
-    public virtual Tracado Tracado { get; set; } = null!;
+    public virtual Tracado? Tracado { get; set; } = null!;
     public virtual Temporada Temporada { get; set; } = null!;
-    public virtual PilotoModel PilotoVencedor { get; set; } = null!;
+    public virtual PilotoModel? Piloto { get; set; } = null!;
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApiSSK.Data.Map;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiSSK.Data
 {
@@ -6,7 +7,6 @@ namespace ApiSSK.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
         }
 
         public DbSet<CalendarioModel> Calendarios { get; set; }
@@ -24,5 +24,12 @@ namespace ApiSSK.Data
         public DbSet<Status> Status { get; set; }
         public DbSet<Temporada> Temporadas { get; set; }
         public DbSet<Tracado> Tracados { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CalendarioMap());
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
