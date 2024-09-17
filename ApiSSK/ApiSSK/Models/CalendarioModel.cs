@@ -15,6 +15,6 @@
     public int? PilotoId { get; set; }
 
     public virtual TracadoModel? Tracado { get; set; }
-    public virtual TemporadaModel Temporada { get; set; }
+    public virtual TemporadaModel Temporada { get; set; } = null!;
     public virtual PilotoModel? Piloto { get; set; }
 }

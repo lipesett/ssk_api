@@ -7,7 +7,7 @@
     public int CalendarioId { get; set; }
     public int PontuacaoId { get; set; }
 
-    public virtual PilotoModel Piloto { get; set; } = null!;
-    public virtual CalendarioModel Calendario { get; set; } = null!;
-    public virtual PontuacaoModel Pontuacao { get; set; } = null!;
+    public virtual PilotoModel Piloto { get; set; }
+    public virtual CalendarioModel Calendario { get; set; }
+    public virtual PontuacaoModel Pontuacao { get; set; }
 }

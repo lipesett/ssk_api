@@ -7,8 +7,8 @@
     public int? ClimaId { get; set; }
     public int? CalendarioId { get; set; }
 
-    public virtual MelhorVoltaDescModel MelhorVoltaDesc { get; set; }
-    public virtual PilotoModel Piloto { get; set; }
+    public virtual MelhorVoltaDescModel MelhorVoltaDesc { get; set; } = null!;
+    public virtual PilotoModel Piloto { get; set; } = null!;
     public virtual ClimaModel? Clima { get; set; }
     public virtual CalendarioModel? Calendario { get; set; }
 }

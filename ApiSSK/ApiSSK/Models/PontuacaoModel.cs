@@ -5,5 +5,5 @@
     public int PonPontos { get; set; }
     public int TemporadaId { get; set; }
 
-    public virtual TemporadaModel Temporada { get; set; } = null!;
+    public virtual TemporadaModel Temporada { get; set; }
 }

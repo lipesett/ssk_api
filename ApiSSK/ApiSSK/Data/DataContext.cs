@@ -38,12 +38,12 @@ namespace ApiSSK.Data
             modelBuilder.ApplyConfiguration(new MelhorVoltaMap());
             modelBuilder.ApplyConfiguration(new MelhorVoltaDescMap());
             modelBuilder.ApplyConfiguration(new PilotoMap());
-            //modelBuilder.ApplyConfiguration(new ClimaMap());
-            //modelBuilder.ApplyConfiguration(new ClimaMap());
-            //modelBuilder.ApplyConfiguration(new ClimaMap());
-            //modelBuilder.ApplyConfiguration(new ClimaMap());
-            //modelBuilder.ApplyConfiguration(new ClimaMap());
-            //modelBuilder.ApplyConfiguration(new ClimaMap());
+            modelBuilder.ApplyConfiguration(new PontuacaoMap());
+            modelBuilder.ApplyConfiguration(new PontuacaoPilotoEtapaMap());
+            modelBuilder.ApplyConfiguration(new SentidoMap());
+            modelBuilder.ApplyConfiguration(new StatusMap());
+            modelBuilder.ApplyConfiguration(new TemporadaMap());
+            modelBuilder.ApplyConfiguration(new TracadoMap());
 
             base.OnModelCreating(modelBuilder);
         }
