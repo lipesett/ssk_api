@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -7,15 +8,15 @@ namespace ApiSSK.Controllers
     public class StatusController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Status>>> GetAllStatus()
+        public async Task<ActionResult<List<StatusModel>>> GetAllStatus()
         {
-            var status = new List<Status>()
+            var status = new List<StatusModel>()
             {
-                new Status() {
+                new StatusModel() {
                     StaId = 1,
                     StaDesc = "mock 1"
                 },
-                new Status()
+                new StatusModel()
                 {
                     StaId = 2,
                     StaDesc = "mock 2"

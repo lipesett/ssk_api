@@ -4,5 +4,5 @@
     public string CatNome { get; set; }
     public int StatusId { get; set; }
 
-    public virtual Status Status { get; set; }
+    public virtual StatusModel Status { get; set; }
 }

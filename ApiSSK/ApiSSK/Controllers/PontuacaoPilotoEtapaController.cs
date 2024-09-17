@@ -7,33 +7,33 @@ namespace ApiSSK.Controllers
     public class PontuacaoPilotoEtapaController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<PontuacaoPilotoEtapa>>> GetAllPontuacoesPilotosEtapa()
+        public async Task<ActionResult<List<PontuacaoPilotoEtapaModel>>> GetAllPontuacoesPilotosEtapa()
         {
-            var ppe = new List<PontuacaoPilotoEtapa>()
+            var ppe = new List<PontuacaoPilotoEtapaModel>()
             {
-                new PontuacaoPilotoEtapa()
+                new PontuacaoPilotoEtapaModel()
                 {
                     PpeId = 1,
-                    PilId = 1,
-                    CalId = 1,
-                    PonId = 1,
+                    PilotoId = 1,
+                    CalendarioId = 1,
+                    PontuacaoId = 1,
                     PpeTempoMelhorVolta = "01:23.456",
                     MelhorVolta = true,
                     Piloto = new PilotoModel(){ PilId = 1 },
                     Calendario = new CalendarioModel(){ CalId = 1 },
-                    Pontuacao = new Pontuacao(){ PonId = 1 }
+                    Pontuacao = new PontuacaoModel(){ PonId = 1 }
                 },
-                new PontuacaoPilotoEtapa()
+                new PontuacaoPilotoEtapaModel()
                 {
                     PpeId = 2,
-                    PilId = 2,
-                    CalId = 2,
-                    PonId = 2,
+                    PilotoId = 2,
+                    CalendarioId = 2,
+                    PontuacaoId = 2,
                     PpeTempoMelhorVolta = "01:24.789",
                     MelhorVolta = false,
                     Piloto = new PilotoModel(){ PilId = 2 },
                     Calendario = new CalendarioModel(){ CalId = 2 },
-                    Pontuacao = new Pontuacao(){ PonId = 2 }
+                    Pontuacao = new PontuacaoModel(){ PonId = 2 }
                 }
             };
 

@@ -7,7 +7,7 @@
     public DateTime TemInicio { get; set; }
     public DateTime TemFinal { get; set; }
     public int TemAno { get; set; }
-    public int StaId { get; set; }
+    public int StatusId { get; set; }
 
-    public virtual Status Status { get; set; } = null!;
+    public virtual StatusModel Status { get; set; } = null!;
 }

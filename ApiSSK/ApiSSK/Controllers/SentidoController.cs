@@ -7,16 +7,16 @@ namespace ApiSSK.Controllers
     public class SentidoController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Sentido>>> GetAllSentidos()
+        public async Task<ActionResult<List<SentidoModel>>> GetAllSentidos()
         {
-            var sentidos = new List<Sentido>()
+            var sentidos = new List<SentidoModel>()
             {
-                new Sentido()
+                new SentidoModel()
                 {
                     SenId = 1,
                     SenDesc = "Horário"
                 },
-                new Sentido()
+                new SentidoModel()
                 {
                     SenId = 2,
                     SenDesc = "Anti-Horário"

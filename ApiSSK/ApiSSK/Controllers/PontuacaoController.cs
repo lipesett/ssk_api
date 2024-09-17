@@ -7,11 +7,11 @@ namespace ApiSSK.Controllers
     public class PontuacaoController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<Pontuacao>>> GetAllPontuacoes()
+        public async Task<ActionResult<List<PontuacaoModel>>> GetAllPontuacoes()
         {
-            var pontuacao = new List<Pontuacao>()
+            var pontuacao = new List<PontuacaoModel>()
             {
-                new Pontuacao()
+                new PontuacaoModel()
                 {
                     PonId = 1,
                     PonPosicao = 1,
@@ -19,7 +19,7 @@ namespace ApiSSK.Controllers
                     TemTemporada = 1,
                     Temporada = new Temporada(){ TemId = 1, StaId = 1 }
                 },
-                new Pontuacao()
+                new PontuacaoModel()
                 {
                     PonId = 2,
                     PonPosicao = 1,
