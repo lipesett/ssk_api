@@ -3,10 +3,9 @@
     public interface IClimaRepository
     {
         Task<List<ClimaModel>> GetAllClimas();
-
-        //buscar por id
-        //adicionar
-        //modificar
-        //deletar
+        Task<ClimaModel> GetClimaById(int id);
+        Task<ClimaModel> AdicionarClima(ClimaModel climaModel);
+        Task<ClimaModel> AtualizarClima(ClimaModel climaModel, int id);
+        Task<bool> DeletarClima(int id);
     }
 }
