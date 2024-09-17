@@ -7,8 +7,10 @@ namespace ApiSSK.Data.Map
     {
         public void Configure(EntityTypeBuilder<ClimaModel> builder)
         {
+            builder.ToTable("CLIMA");
             builder.HasKey(x => x.CliId);
-            builder.Property(x => x.CliDesc).IsRequired().HasMaxLength(20);
+            builder.Property(x => x.CliId).HasColumnName("CLI_ID");
+            builder.Property(x => x.CliDesc).HasColumnName("CLI_DESC").IsRequired().HasMaxLength(50);
         }
     }
 }
