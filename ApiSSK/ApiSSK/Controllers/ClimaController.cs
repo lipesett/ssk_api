@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,28 +7,17 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class ClimaController : ControllerBase
     {
+        private readonly IClimaRepository _climaRepository;
+
+        public ClimaController(IClimaRepository climaRepository)
+        {
+            _climaRepository = climaRepository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<ClimaModel>>> GetAllClimas()
         {
-            var climas = new List<ClimaModel>()
-            {
-                new ClimaModel()
-                {
-                    CliId = 1,
-                    CliDesc = "Seco"
-                },
-                new ClimaModel()
-                {
-                    CliId = 2,
-                    CliDesc = "Misto"
-                },
-                new ClimaModel()
-                {
-                    CliId = 3,
-                    CliDesc = "Chuva"
-                }
-            };
-
+            var climas = await _climaRepository.GetAllClimas();
             return Ok(climas);
         }
     }

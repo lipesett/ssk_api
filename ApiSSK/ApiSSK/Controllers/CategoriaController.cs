@@ -16,21 +16,21 @@ namespace ApiSSK.Controllers
                     CatId = 1,
                     CatNome = "Categoria Borracha",
                     StatusId = 1,
-                    Status = new Status { StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel { StaId = 1, StaDesc = "Ativo" }
                 },
                 new CategoriaModel()
                 {
                     CatId = 2,
                     CatNome = "Categoria Senna",
                     StatusId = 1,
-                    Status = new Status { StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel { StaId = 1, StaDesc = "Ativo" }
                 },
                 new CategoriaModel()
                 {
                     CatId = 3,
                     CatNome = "Categoria Binnoto",
                     StatusId = 2,
-                    Status = new Status { StaId = 2, StaDesc = "Inativo" }
+                    Status = new StatusModel { StaId = 2, StaDesc = "Inativo" }
                 }
             };
 

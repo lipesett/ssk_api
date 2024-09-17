@@ -15,22 +15,22 @@ namespace ApiSSK.Controllers
                 {
                     DivId = 1,
                     DivNome = "Divisão 80kg",
-                    StaId = 1,
-                    Status = new Status() { StaId = 1, StaDesc = "Ativo" }
+                    StatusId = 1,
+                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
                 },
                 new DivisaoModel()
                 {
                     DivId = 1,
                     DivNome = "Divisão 95kg",
-                    StaId = 1,
-                    Status = new Status() { StaId = 1, StaDesc = "Ativo" }
+                    StatusId = 1,
+                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
                 },
                 new DivisaoModel()
                 {
                     DivId = 1,
                     DivNome = "Divisão 110kg",
-                    StaId = 1,
-                    Status = new Status() { StaId = 2, StaDesc = "Inativo" }
+                    StatusId = 1,
+                    Status = new StatusModel{ StaId = 2, StaDesc = "Inativo" }
                 }
             };
 

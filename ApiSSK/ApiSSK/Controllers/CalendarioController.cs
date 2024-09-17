@@ -26,8 +26,8 @@ namespace ApiSSK.Controllers
                     TracadoId = 1,
                     TemporadaId = 2024,
                     PilotoId = 1,
-                    Tracado = new Tracado { TraId = 1 },
-                    Temporada = new Temporada { TemId = 1 },
+                    Tracado = new TracadoModel { TraId = 1 },
+                    Temporada = new TemporadaModel { TemId = 1 },
                     Piloto = new PilotoModel { PilId = 1 }
                 }
             };

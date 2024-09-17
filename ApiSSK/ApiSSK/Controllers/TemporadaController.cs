@@ -18,8 +18,8 @@ namespace ApiSSK.Controllers
                     TemInicio = new DateTime(2024, 1, 15),  // Data de início
                     TemFinal = new DateTime(2024, 12, 15),   // Data de final
                     TemAno = 2024,
-                    StaId = 1,
-                    Status = new StatusModel { StaId = 1, StaDesc = "Ativo" }
+                    StatusId = 1,
+                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
                 },
                 new TemporadaModel()
                 {
@@ -30,8 +30,8 @@ namespace ApiSSK.Controllers
                     TemInicio = new DateTime(2023, 3, 1),    // Data de início
                     TemFinal = new DateTime(2023, 11, 30),   // Data de final
                     TemAno = 2023,
-                    StaId = 2,
-                    Status = new StatusModel { StaId = 2, StaDesc = "Concluído" }
+                    StatusId = 2,
+                    Status = new StatusModel{ StaId = 2, StaDesc = "Concluído" }
                 }
             };
 

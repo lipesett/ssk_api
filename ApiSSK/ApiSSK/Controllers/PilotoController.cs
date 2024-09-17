@@ -26,8 +26,8 @@ namespace ApiSSK.Controllers
                     PilVoltasRapidas = 2,
                     PilUltimaTemp = 1,
                     PilLinksFotos = "www.google.com",
-                    StaId = 1,
-                    Status = new Status(){ StaId = 1, StaDesc = "Ativo" }
+                    StatusId = 1,
+                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
                 },
                 new PilotoModel()
                 {
@@ -44,8 +44,8 @@ namespace ApiSSK.Controllers
                     PilVoltasRapidas = 2,
                     PilUltimaTemp = 1,
                     PilLinksFotos = "www.google.com",
-                    StaId = 1,
-                    Status = new Status(){ StaId = 1, StaDesc = "Ativo" }
+                    StatusId = 1,
+                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
                 }
             };
 
