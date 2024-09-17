@@ -3,10 +3,9 @@
     public interface IPilotoRepository
     {
         Task<List<PilotoModel>> GetAllPilotos();
-
-        //buscar por id
-        //adicionar
-        //modificar
-        //deletar
+        Task<PilotoModel> GetPilotoById(int id);
+        Task<PilotoModel> AdicionarPiloto(PilotoModel pilotoModel);
+        Task<PilotoModel> AtualizarPiloto(PilotoModel pilotoModel, int id);
+        Task<bool> DeletarPiloto(int id);
     }
 }

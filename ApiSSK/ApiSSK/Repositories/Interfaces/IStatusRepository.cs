@@ -3,10 +3,9 @@
     public interface IStatusRepository
     {
         Task<List<StatusModel>> GetAllStatus();
-
-        //buscar por id
-        //adicionar
-        //modificar
-        //deletar
+        Task<StatusModel> GetStatusById(int id);
+        Task<StatusModel> AdicionarStatus(StatusModel statusModel);
+        Task<StatusModel> AtualizarStatus(StatusModel statusModel, int id);
+        Task<bool> DeletarStatus(int id);
     }
 }

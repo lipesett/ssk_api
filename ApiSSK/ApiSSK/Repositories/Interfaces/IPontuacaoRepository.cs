@@ -3,10 +3,9 @@
     public interface IPontuacaoRepository
     {
         Task<List<PontuacaoModel>> GetAllPontuacoes();
-
-        //buscar por id
-        //adicionar
-        //modificar
-        //deletar
+        Task<PontuacaoModel> GetPontuacaoById(int id);
+        Task<PontuacaoModel> AdicionarPontuacao(PontuacaoModel pontuacaoModel);
+        Task<PontuacaoModel> AtualizarPontuacao(PontuacaoModel pontuacaoModel, int id);
+        Task<bool> DeletarPontuacao(int id);
     }
 }

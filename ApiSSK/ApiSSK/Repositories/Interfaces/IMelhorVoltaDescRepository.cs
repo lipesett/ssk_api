@@ -3,10 +3,9 @@
     public interface IMelhorVoltaDescRepository
     {
         Task<List<MelhorVoltaDescModel>> GetAllMVDescricoes();
-
-        //buscar por id
-        //adicionar
-        //modificar
-        //deletar
+        Task<MelhorVoltaDescModel> GetMVDescricaoById(int id);
+        Task<MelhorVoltaDescModel> AdicionarMVDescricao(MelhorVoltaDescModel melhorVoltaDescModel);
+        Task<MelhorVoltaDescModel> AtualizarMVDescricao(MelhorVoltaDescModel melhorVoltaDescModel, int id);
+        Task<bool> DeletarMVDescricao(int id);
     }
 }

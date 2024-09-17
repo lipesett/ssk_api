@@ -3,10 +3,9 @@
     public interface IInscricaoRepository
     {
         Task<List<InscricaoModel>> GetAllInscricoes();
-
-        //buscar por id
-        //adicionar
-        //modificar
-        //deletar
+        Task<InscricaoModel> GetInscricaoById(int id);
+        Task<InscricaoModel> AdicionarInscricao(InscricaoModel inscricaoModel);
+        Task<InscricaoModel> AtualizarInscricao(InscricaoModel inscricaoModel, int id);
+        Task<bool> DeletarInscricao(int id);
     }
 }

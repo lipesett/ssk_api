@@ -3,10 +3,9 @@
     public interface ICalendarioRepository
     {
         Task<List<CalendarioModel>> GetAllCalendarios();
-
-        //buscar por id
-        //adicionar
-        //modificar
-        //deletar
+        Task<CalendarioModel> GetCalendarioById(int id);
+        Task<CalendarioModel> AdicionarCalendario(CalendarioModel calendarioModel);
+        Task<CalendarioModel> AtualizarCalendario(CalendarioModel calendarioModel, int id);
+        Task<bool> DeletarCalendario(int id);
     }
 }
