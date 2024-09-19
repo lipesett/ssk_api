@@ -12,9 +12,29 @@ namespace ApiSSK.Repositories
             _dbContext = dataContext;
         }
 
+        public Task<MelhorVoltaModel> AdicionarMelhorVolta(MelhorVoltaModel melhorVoltaModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<MelhorVoltaModel> AtualizarMelhorVolta(MelhorVoltaModel melhorVoltaModel, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeletarMelhorVolta(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<MelhorVoltaModel>> GetAllMelhoresVoltas()
         {
             return await _dbContext.MelhoresVoltas.ToListAsync();
+        }
+
+        public Task<MelhorVoltaModel> GetMelhorVoltaById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

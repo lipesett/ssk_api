@@ -14,12 +14,27 @@ namespace ApiSSK.Repositories
 
         public async Task<List<ClimaModel>> GetAllClimas()
         {
-            return await _dbContext.Climas.ToListAsync();
+            var clima = await _dbContext.Climas.ToListAsync();
+
+            if (clima == null)
+            {
+                throw new Exception($"Nenhum clima encontrado.");
+            }
+
+            return clima;
         }
 
         public async Task<ClimaModel> GetClimaById(int id)
         {
-            return await _dbContext.Climas.FirstOrDefaultAsync();
+
+            var clima = await _dbContext.Climas.FirstOrDefaultAsync(x => x.CliId == id);
+
+            if (clima == null)
+            {
+                throw new Exception($"Nenhum clima para o {id} encontrado.");
+            }
+
+            return clima;
         }
 
         public async Task<ClimaModel> AdicionarClima(ClimaModel climaModel)
