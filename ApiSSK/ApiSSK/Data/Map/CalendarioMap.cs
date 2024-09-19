@@ -10,25 +10,22 @@ namespace ApiSSK.Data.Map
             builder.ToTable("CALENDARIO");
             builder.HasKey(x => x.CalId);
             builder.Property(x => x.CalId).HasColumnName("CAL_ID");
-            builder.Property(x => x.CalNomeEtapa).HasColumnName("CAL_NOME_ETAPA").IsRequired().HasMaxLength(100);
-            builder.Property(x => x.CalNumEtapa).HasColumnName("CAL_NUM_ETAPA").IsRequired();
-            builder.Property(x => x.CalDia).HasColumnName("CAL_DIA").IsRequired();
-            builder.Property(x => x.CalMes).HasColumnName("CAL_MES").IsRequired();
-            builder.Property(x => x.CalAno).HasColumnName("CAL_ANO").IsRequired();
-            builder.Property(x => x.CalDataCompleta).HasColumnName("CAL_DATA_COMPLETA").IsRequired();
-            builder.Property(x => x.CalHorario).HasColumnName("CAL_HORARIO").IsRequired();
-            builder.Property(x => x.CalPtsDisputados).HasColumnName("CAL_PTS_DISPUTADOS").IsRequired();
-            builder.Property(x => x.CalEtapaRealizada).HasColumnName("CAL_ETAPA_REALIZADA").IsRequired();
+            builder.Property(x => x.CalNomeEtapa).IsRequired().HasMaxLength(100).HasColumnName("CAL_NOME_ETAPA");
+            builder.Property(x => x.CalNumEtapa).IsRequired().HasColumnName("CAL_NUM_ETAPA");
+            builder.Property(x => x.CalDia).IsRequired().HasColumnName("CAL_DIA");
+            builder.Property(x => x.CalMes).IsRequired().HasColumnName("CAL_MES");
+            builder.Property(x => x.CalAno).IsRequired().HasColumnName("CAL_ANO");
+            builder.Property(x => x.CalDataCompleta).IsRequired().HasColumnName("CAL_DATA_COMPLETA");
+            builder.Property(x => x.CalHorario).IsRequired().HasColumnName("CAL_HORARIO");
+            builder.Property(x => x.CalPtsDisputados).IsRequired().HasColumnName("CAL_PTS_DISPUTADOS");
+            builder.Property(x => x.CalEtapaRealizada).IsRequired().HasColumnName("CAL_ETAPA_REALIZADA");
             builder.Property(x => x.TracadoId).HasColumnName("TRA_TRACADO");
-            builder.Property(x => x.TemporadaId).HasColumnName("TEM_TEMPORADA").IsRequired();
+            builder.Property(x => x.TemporadaId).IsRequired().HasColumnName("TEM_TEMPORADA");
             builder.Property(x => x.PilotoId).HasColumnName("PIL_PILOTO_VENCEDOR");
 
-            builder.HasOne(x => x.Tracado)
-                   .WithOne().HasForeignKey<CalendarioModel>(x => x.TracadoId);
-            builder.HasOne(x => x.Temporada)
-                   .WithOne().HasForeignKey<CalendarioModel>(x => x.TemporadaId);
-            builder.HasOne(x => x.Piloto)
-                   .WithOne().HasForeignKey<CalendarioModel>(x => x.PilotoId);
+            builder.HasOne(x => x.Tracado).WithOne().HasForeignKey<CalendarioModel>(x => x.TracadoId);
+            builder.HasOne(x => x.Temporada).WithOne().HasForeignKey<CalendarioModel>(x => x.TemporadaId);
+            builder.HasOne(x => x.Piloto).WithOne().HasForeignKey<CalendarioModel>(x => x.PilotoId);
         }
     }
 }

@@ -10,11 +10,10 @@ namespace ApiSSK.Data.Map
             builder.ToTable("CATEGORIAS");
             builder.HasKey(x => x.CatId);
             builder.Property(x => x.CatId).HasColumnName("CAT_ID");
-            builder.Property(x => x.CatNome).HasColumnName("CAT_NOME").IsRequired().HasMaxLength(50);
-            builder.Property(x => x.StatusId).HasColumnName("STA_ID").IsRequired();
+            builder.Property(x => x.CatNome).IsRequired().HasMaxLength(50).HasColumnName("CAT_NOME");
+            builder.Property(x => x.StatusId).IsRequired().HasColumnName("STA_ID");
 
-            builder.HasOne(x => x.Status)
-                   .WithOne().HasForeignKey<CategoriaModel>(x => x.StatusId);
+            builder.HasOne(x => x.Status).WithOne().HasForeignKey<CategoriaModel>(x => x.StatusId);
         }
     }
 }

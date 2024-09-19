@@ -7,15 +7,13 @@ namespace ApiSSK.Data.Map
     {
         public void Configure(EntityTypeBuilder<CategoriaDivisaoModel> builder)
         {
-            builder.ToTable("CATEGORIA_DIVISAO", "dbo");
+            builder.ToTable("CATEGORIA_DIVISAO");
             builder.HasKey(x => new { x.CategoriaId, x.DivisaoId });
             builder.Property(x => x.CategoriaId).HasColumnName("CAT_ID");
             builder.Property(x => x.DivisaoId).HasColumnName("DIV_ID");
 
-            builder.HasOne(x => x.Categoria)
-                   .WithOne().HasForeignKey<CategoriaDivisaoModel>(x => x.CategoriaId);
-            builder.HasOne(x => x.Divisao)
-                   .WithOne().HasForeignKey<CategoriaDivisaoModel>(x => x.DivisaoId);
+            builder.HasOne(x => x.Categoria).WithOne().HasForeignKey<CategoriaDivisaoModel>(x => x.CategoriaId);
+            builder.HasOne(x => x.Divisao).WithOne().HasForeignKey<CategoriaDivisaoModel>(x => x.DivisaoId);
         }
     }
 }

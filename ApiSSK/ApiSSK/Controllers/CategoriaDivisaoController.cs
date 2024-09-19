@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,28 +7,22 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class CategoriaDivisaoController : ControllerBase
     {
+        private readonly ICategoriaDivisaoRepository _categoriaDivisaoRepository;
+        public CategoriaDivisaoController(ICategoriaDivisaoRepository categoriaDivisaoRepository)
+        {
+            _categoriaDivisaoRepository = categoriaDivisaoRepository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<CategoriaDivisaoModel>>> GetAllCategoriasDivisoes()
         {
-            var cXd = new List<CategoriaDivisaoModel>()
-            {
-                new CategoriaDivisaoModel()
-                {
-                    CategoriaId = 1,
-                    DivisaoId = 1,
-                    Categoria = new CategoriaModel(){ CatId = 1 },
-                    Divisao = new DivisaoModel(){ DivId = 1 }
-                },
-                new CategoriaDivisaoModel()
-                {
-                    CategoriaId = 2,
-                    DivisaoId = 2,
-                    Categoria = new CategoriaModel(){ CatId = 2 },
-                    Divisao = new DivisaoModel(){ DivId = 2 }
-                }
-            };
+            return await _categoriaDivisaoRepository.GetAllCategoriasDivisoes();
+        }
 
-            return Ok(cXd);
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CategoriaDivisaoModel>> GetAllCategoriasDivisoes(int id)
+        {
+            return await _categoriaDivisaoRepository.GetCategoriaDivisaoById(id);
         }
     }
 }

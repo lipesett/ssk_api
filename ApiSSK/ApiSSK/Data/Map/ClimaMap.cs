@@ -10,7 +10,7 @@ namespace ApiSSK.Data.Map
             builder.ToTable("CLIMA");
             builder.HasKey(x => x.CliId);
             builder.Property(x => x.CliId).HasColumnName("CLI_ID");
-            builder.Property(x => x.CliDesc).HasColumnName("CLI_DESC").IsRequired().HasMaxLength(50);
+            builder.Property(x => x.CliDesc).IsRequired().HasMaxLength(50).HasColumnName("CLI_DESC");
         }
     }
 }

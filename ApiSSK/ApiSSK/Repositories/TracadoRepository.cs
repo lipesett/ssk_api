@@ -12,29 +12,61 @@ namespace ApiSSK.Repositories
             _dbContext = dataContext;
         }
 
-        public Task<TracadoModel> AdicionarTracado(TracadoModel tracado)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<TracadoModel> AtualizarTracado(TracadoModel tracado, int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeletarTracado(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<TracadoModel>> GetAllTracados()
         {
             return await _dbContext.Tracados.ToListAsync();
         }
 
-        public Task<TracadoModel> GetTracadoById(int id)
+        public async Task<TracadoModel> GetTracadoById(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Tracados.FirstOrDefaultAsync(x => x.TraId == id);
+        }
+
+        public async Task<TracadoModel> AdicionarTracado(TracadoModel tracado)
+        {
+            await _dbContext.Tracados.AddAsync(tracado);
+            await _dbContext.SaveChangesAsync();
+
+            return tracado;
+        }
+
+        public async Task<TracadoModel> AtualizarTracado(TracadoModel tracado, int id)
+        {
+            TracadoModel tracadoId = await GetTracadoById(id);
+
+            if (tracadoId == null)
+            {
+                throw new Exception($"Traçado para o ID: {id} não encontrado.");
+            }
+
+            tracadoId.TraNome = tracado.TraNome;
+            tracadoId.TraDataEstreia = tracado.TraDataEstreia;
+            tracadoId.KartodromoId = tracado.KartodromoId;
+            tracadoId.SentidoId = tracado.SentidoId;
+            tracadoId.ClimaId = tracado.ClimaId;
+            tracadoId.MvEstreiaId = tracado.MvEstreiaId;
+            tracadoId.MvRecordId = tracado.MvRecordId;
+            tracadoId.TraImg = tracado.TraImg;
+
+            _dbContext.Tracados.Update(tracadoId);
+            await _dbContext.SaveChangesAsync();
+
+            return tracadoId;
+        }
+
+        public async Task<bool> DeletarTracado(int id)
+        {
+            TracadoModel tracadoId = await GetTracadoById(id);
+
+            if (tracadoId == null)
+            {
+                throw new Exception($"Traçado para o ID: {id} não encontrado.");
+            }
+
+            _dbContext.Tracados.Remove(tracadoId);
+            await _dbContext.SaveChangesAsync();
+
+            return true;
         }
     }
 }
