@@ -11,30 +11,37 @@ namespace ApiSSK.Repositories
         {
             _dbContext = dataContext;
         }
-
-        public Task<CategoriaDivisaoModel> AdicionarCategoriaDivisao(CategoriaDivisaoModel categoriaDivisaoModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<CategoriaDivisaoModel> AtualizarCategoriaDivisao(CategoriaDivisaoModel categoriaDivisaoModel, int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeletarCategoriaDivisao(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<CategoriaDivisaoModel>> GetAllCategoriasDivisoes()
         {
             return await _dbContext.CategoriasDivisoes.ToListAsync();
         }
 
-        public Task<CategoriaDivisaoModel> GetCategoriaDivisaoById(int id)
+        public async Task<CategoriaDivisaoModel> GetCategoriaDivisaoById(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.CategoriasDivisoes.FirstOrDefaultAsync(x => x.CategoriaId == id);
+        }
+
+        public async Task<CategoriaDivisaoModel> AdicionarCategoriaDivisao(CategoriaDivisaoModel categoriaDivisaoModel)
+        {
+            await _dbContext.CategoriasDivisoes.AddAsync(categoriaDivisaoModel);
+            await _dbContext.SaveChangesAsync();
+
+            return categoriaDivisaoModel;
+        }
+
+        public async Task<bool> DeletarCategoriaDivisao(int id)
+        {
+            CategoriaDivisaoModel categoriaDivisaoModel = await GetCategoriaDivisaoById(id);
+
+            if (categoriaDivisaoModel == null)
+            {
+                throw new Exception($"Clima para o ID: {id} não encontrado.");
+            }
+
+            _dbContext.CategoriasDivisoes.Remove(categoriaDivisaoModel);
+            await _dbContext.SaveChangesAsync();
+
+            return true; ;
         }
     }
 }

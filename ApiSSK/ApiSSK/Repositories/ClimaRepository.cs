@@ -61,6 +61,6 @@ namespace ApiSSK.Repositories
             await _dbContext.SaveChangesAsync();
 
             return true;
-        }        
+        }
     }
 }
