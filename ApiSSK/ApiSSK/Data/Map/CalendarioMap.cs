@@ -19,9 +19,9 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.CalHorario).IsRequired().HasColumnName("CAL_HORARIO");
             builder.Property(x => x.CalPtsDisputados).IsRequired().HasColumnName("CAL_PTS_DISPUTADOS");
             builder.Property(x => x.CalEtapaRealizada).IsRequired().HasColumnName("CAL_ETAPA_REALIZADA");
-            builder.Property(x => x.TracadoId).HasColumnName("TRA_TRACADO");
-            builder.Property(x => x.TemporadaId).IsRequired().HasColumnName("TEM_TEMPORADA");
-            builder.Property(x => x.PilotoId).HasColumnName("PIL_PILOTO_VENCEDOR");
+            builder.Property(x => x.TracadoId).HasColumnName("TRA_ID");
+            builder.Property(x => x.TemporadaId).IsRequired().HasColumnName("TEM_ID");
+            builder.Property(x => x.PilotoId).HasColumnName("PIL_ID");
 
             builder.HasOne(x => x.Tracado).WithOne().HasForeignKey<CalendarioModel>(x => x.TracadoId);
             builder.HasOne(x => x.Temporada).WithOne().HasForeignKey<CalendarioModel>(x => x.TemporadaId);
