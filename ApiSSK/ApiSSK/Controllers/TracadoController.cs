@@ -8,6 +8,7 @@ namespace ApiSSK.Controllers
     public class TracadoController : ControllerBase
     {
         private readonly ITracadoRepository _tracadoRepository;
+
         public TracadoController(ITracadoRepository tracadoRepository)
         {
             _tracadoRepository = tracadoRepository;
@@ -16,8 +17,7 @@ namespace ApiSSK.Controllers
         [HttpGet]
         public async Task<ActionResult<List<TracadoModel>>> GetAllTracados()
         {
-            List<TracadoModel> tracados = await _tracadoRepository.GetAllTracados();
-            return Ok(tracados);
+            return await _tracadoRepository.GetAllTracados();
         }
     }
 }

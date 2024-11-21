@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,35 +7,17 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class CategoriaController : ControllerBase
     {
+        private readonly ICategoriaRepository _repository;
+
+        public CategoriaController(ICategoriaRepository repository)
+        {
+            _repository = repository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<CategoriaModel>>> GetAllCategorias()
         {
-            var categorias = new List<CategoriaModel>()
-            {
-                new CategoriaModel()
-                {
-                    Id = 1,
-                    Nome = "Categoria Borracha",
-                    StatusId = 1,
-                    Status = new StatusModel { Id = 1, Descricao = "Ativo" }
-                },
-                new CategoriaModel()
-                {
-                    Id = 2,
-                    Nome = "Categoria Senna",
-                    StatusId = 1,
-                    Status = new StatusModel { Id = 1, Descricao = "Ativo" }
-                },
-                new CategoriaModel()
-                {
-                    Id = 3,
-                    Nome = "Categoria Binnoto",
-                    StatusId = 2,
-                    Status = new StatusModel { Id = 2, Descricao = "Inativo" }
-                }
-            };
-
-            return Ok(categorias);
+            return await _repository.GetAllCategorias();
         }
     }
 }

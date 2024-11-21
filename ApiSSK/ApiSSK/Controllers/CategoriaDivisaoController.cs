@@ -9,6 +9,7 @@ namespace ApiSSK.Controllers
     public class CategoriaDivisaoController : ControllerBase
     {
         private readonly ICategoriaDivisaoRepository _categoriaDivisaoRepository;
+
         public CategoriaDivisaoController(ICategoriaDivisaoRepository categoriaDivisaoRepository)
         {
             _categoriaDivisaoRepository = categoriaDivisaoRepository;
@@ -24,20 +25,6 @@ namespace ApiSSK.Controllers
         public async Task<ActionResult<CategoriaDivisaoModel>> GetAllCategoriasDivisoes(int id)
         {
             return await _categoriaDivisaoRepository.GetCategoriaDivisaoById(id);
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<CategoriaDivisaoModel>> AdicionarClima([FromBody] CategoriaDivisaoModel categoriaDivisaoModel)
-        {
-            CategoriaDivisaoModel clima = await _categoriaDivisaoRepository.AdicionarCategoriaDivisao(categoriaDivisaoModel);
-            return Ok(clima);
-        }
-
-        [HttpDelete]
-        public async Task<ActionResult<CategoriaDivisaoModel>> DeletarClima(int id)
-        {
-            bool deletado = await _categoriaDivisaoRepository.DeletarCategoriaDivisao(id);
-            return Ok(deletado);
         }
     }
 }

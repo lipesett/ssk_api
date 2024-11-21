@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,28 +7,17 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class KartodromoController : ControllerBase
     {
+        private readonly IKartodromoRepository _kartodromoRepository;
+
+        public KartodromoController(IKartodromoRepository kartodromoRepository)
+        {
+            _kartodromoRepository = kartodromoRepository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<KartodromoModel>>> GetAllKartodromos()
         {
-            var kartodromos = new List<KartodromoModel>()
-            {
-                new KartodromoModel()
-                {
-                    Id = 1,
-                    Nome = "Kartódromo Granja Viana",
-                    Apelido = "Granja Viana",
-                    NomCurto = "KGV"
-                },
-                new KartodromoModel()
-                {
-                    Id = 2,
-                    Nome = "Kartódromo Nova Odessa",
-                    Apelido = "Nova Odessa",
-                    NomCurto = "KNO"
-                }
-            };
-
-            return Ok(kartodromos);
+            return await _kartodromoRepository.GetAllKartodromos();
         }
     }
 }

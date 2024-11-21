@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,35 +7,17 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class DivisaoController : ControllerBase
     {
+        private readonly IDivisaoRepository _divisaoRepository;
+
+        public DivisaoController(IDivisaoRepository divisaoRepository)
+        {
+            _divisaoRepository = divisaoRepository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<DivisaoModel>>> GetAllDivisao()
         {
-            var divisao = new List<DivisaoModel>()
-            {
-                new DivisaoModel()
-                {
-                    Id = 1,
-                    Nome = "Divisão 80kg",
-                    StatusId = 1,
-                    Status = new StatusModel{ Id = 1, Descricao = "Ativo" }
-                },
-                new DivisaoModel()
-                {
-                    Id = 1,
-                    Nome = "Divisão 95kg",
-                    StatusId = 1,
-                    Status = new StatusModel{ Id = 1, Descricao = "Ativo" }
-                },
-                new DivisaoModel()
-                {
-                    Id = 1,
-                    Nome = "Divisão 110kg",
-                    StatusId = 1,
-                    Status = new StatusModel{ Id = 2, Descricao = "Inativo" }
-                }
-            };
-
-            return Ok(divisao);
+            return await _divisaoRepository.GetAllDivisoes();
         }
     }
 }

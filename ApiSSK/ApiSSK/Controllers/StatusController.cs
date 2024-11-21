@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,22 +7,17 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class StatusController : ControllerBase
     {
+        private readonly IStatusRepository _statusRepository;
+
+        public StatusController(IStatusRepository statusRepository)
+        {
+            _statusRepository = statusRepository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<StatusModel>>> GetAllStatus()
         {
-            var status = new List<StatusModel>()
-            {
-                new StatusModel() {
-                    Id = 1,
-                    Descricao = "mock 1"
-                },
-                new StatusModel()
-                {
-                    Id = 2,
-                    Descricao = "mock 2"
-                }
-            };
-            return Ok(status);
+            return await _statusRepository.GetAllStatus();
         }
     }
 }

@@ -17,9 +17,7 @@ namespace ApiSSK.Controllers
         [HttpGet]
         public async Task<ActionResult<List<CalendarioModel>>> GetAllCalendarios()
         {
-            List<CalendarioModel> calendario = await _calendarioRepository.GetAllCalendarios();
-
-            return Ok(calendario);
+            return await _calendarioRepository.GetAllCalendarios();
         }
     }
 }

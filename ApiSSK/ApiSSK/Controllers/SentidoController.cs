@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,24 +7,17 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class SentidoController : ControllerBase
     {
+        private readonly ISentidoRepository _sentidoRepository;
+
+        public SentidoController(ISentidoRepository sentidoRepository)
+        {
+            _sentidoRepository = sentidoRepository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<SentidoModel>>> GetAllSentidos()
         {
-            var sentidos = new List<SentidoModel>()
-            {
-                new SentidoModel()
-                {
-                    Id = 1,
-                    Descricao = "Horário"
-                },
-                new SentidoModel()
-                {
-                    Id = 2,
-                    Descricao = "Anti-Horário"
-                }
-            };
-
-            return Ok(sentidos);
+            return await _sentidoRepository.GetAllSentidos();
         }
     }
 }

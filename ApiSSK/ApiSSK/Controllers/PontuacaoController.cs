@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiSSK.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -6,30 +7,17 @@ namespace ApiSSK.Controllers
     [ApiController]
     public class PontuacaoController : ControllerBase
     {
+        private readonly IPontuacaoRepository _pontuacaoRepository;
+
+        public PontuacaoController(IPontuacaoRepository pontuacaoRepository)
+        {
+            _pontuacaoRepository = pontuacaoRepository;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<PontuacaoModel>>> GetAllPontuacoes()
         {
-            var pontuacao = new List<PontuacaoModel>()
-            {
-                new PontuacaoModel()
-                {
-                    Id = 1,
-                    Posicao = 1,
-                    Pontos = 40,
-                    TemporadaId = 1,
-                    Temporada = new TemporadaModel{ Id = 1 }
-                },
-                new PontuacaoModel()
-                {
-                    Id = 2,
-                    Posicao = 1,
-                    Pontos = 35,
-                    TemporadaId = 1,
-                    Temporada = new TemporadaModel{ Id = 1 }
-                },
-            };
-
-            return Ok(pontuacao);
+            return await _pontuacaoRepository.GetAllPontuacoes();
         }
     }
 }
