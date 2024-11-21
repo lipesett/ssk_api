@@ -12,7 +12,7 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Id).HasColumnName("PON_ID");
             builder.Property(x => x.Posicao).IsRequired().HasColumnName("PON_POSICAO");
             builder.Property(x => x.Pontos).IsRequired().HasColumnName("PON_PONTOS");
-            builder.Property(x => x.TemporadaId).IsRequired().HasColumnName("TEM_ID");
+            builder.Property(x => x.TemporadaId).HasColumnName("TEM_ID");
 
             builder.HasOne(x => x.Temporada).WithOne().HasForeignKey<PontuacaoModel>(x => x.TemporadaId);
         }

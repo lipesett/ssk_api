@@ -12,7 +12,7 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Id).HasColumnName("MV_ID");
             builder.Property(x => x.Tempo).IsRequired().HasMaxLength(25).HasColumnName("MV_TEMPO");
             builder.Property(x => x.MelhorVoltaDescId).HasColumnName("MVD_ID");
-            builder.Property(x => x.PilotoId).IsRequired().HasColumnName("PIL_ID");
+            builder.Property(x => x.PilotoId).HasColumnName("PIL_ID");
             builder.Property(x => x.ClimaId).HasColumnName("CLI_ID");
             builder.Property(x => x.CalendarioId).HasColumnName("CAL_ID");
 

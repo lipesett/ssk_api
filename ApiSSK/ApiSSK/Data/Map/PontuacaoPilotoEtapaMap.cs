@@ -13,9 +13,9 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Id).HasColumnName("PPE_ID");
             builder.Property(x => x.TempoMelhorVolta).HasMaxLength(30).HasColumnName("PPE_TEMPO_VOLTA");
             builder.Property(x => x.MelhorVolta).IsRequired().HasColumnName("PPE_MELHOR_VOLTA");
-            builder.Property(x => x.PilotoId).IsRequired().HasColumnName("PIL_ID");
-            builder.Property(x => x.CalendarioId).IsRequired().HasColumnName("CAL_ID");
-            builder.Property(x => x.PontuacaoId).IsRequired().HasColumnName("PON_ID");
+            builder.Property(x => x.PilotoId).HasColumnName("PIL_ID");
+            builder.Property(x => x.CalendarioId).HasColumnName("CAL_ID");
+            builder.Property(x => x.PontuacaoId).HasColumnName("PON_ID");
 
             builder.HasOne(x => x.Piloto).WithOne().HasForeignKey<PontuacaoPilotoEtapaModel>(x => x.PilotoId);
             builder.HasOne(x => x.Calendario).WithOne().HasForeignKey<PontuacaoPilotoEtapaModel>(x => x.CalendarioId);

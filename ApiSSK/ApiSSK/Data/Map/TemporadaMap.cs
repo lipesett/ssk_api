@@ -16,7 +16,7 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Inicio).IsRequired().HasColumnName("TEM_INICIO");
             builder.Property(x => x.Final).IsRequired().HasColumnName("TEM_FINAL");
             builder.Property(x => x.Ano).IsRequired().HasColumnName("TEM_ANO");
-            builder.Property(x => x.StatusId).IsRequired().HasColumnName("STA_ID");
+            builder.Property(x => x.StatusId).HasColumnName("STA_ID");
 
             builder.HasOne(x => x.Status).WithOne().HasForeignKey<TemporadaModel>(x => x.StatusId);
         }

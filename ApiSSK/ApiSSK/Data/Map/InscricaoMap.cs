@@ -13,10 +13,10 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Id).HasColumnName("INS_ID");
             builder.Property(x => x.DataInscricao).IsRequired().HasColumnName("INS_DATA_INSCRICAO");
             builder.Property(x => x.Pago).HasColumnName("INS_PAGO");
-            builder.Property(x => x.TemporadaId).IsRequired().HasColumnName("TEM_ID");
-            builder.Property(x => x.PilotoId).IsRequired().HasColumnName("PIL_ID");
-            builder.Property(x => x.CategoriaId).IsRequired().HasColumnName("CAT_ID");
-            builder.Property(x => x.DivisaoId).IsRequired().HasColumnName("DIV_ID") ;
+            builder.Property(x => x.TemporadaId).HasColumnName("TEM_ID");
+            builder.Property(x => x.PilotoId).HasColumnName("PIL_ID");
+            builder.Property(x => x.CategoriaId).HasColumnName("CAT_ID");
+            builder.Property(x => x.DivisaoId).HasColumnName("DIV_ID") ;
 
             builder.HasOne(x => x.Temporada).WithOne().HasForeignKey<InscricaoModel>(x => x.TemporadaId);
             builder.HasOne(x => x.Piloto).WithOne().HasForeignKey<InscricaoModel>(x => x.PilotoId);

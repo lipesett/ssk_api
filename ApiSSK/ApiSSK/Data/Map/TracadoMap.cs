@@ -13,7 +13,7 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(100).HasColumnName("TRA_NOME");
             builder.Property(x => x.DataEstreia).IsRequired().HasColumnName("TRA_DATA_ESTREIA");
             builder.Property(x => x.Img).HasMaxLength(255).HasColumnName("TRA_IMG");
-            builder.Property(x => x.KartodromoId).IsRequired().HasColumnName("KAR_ID");
+            builder.Property(x => x.KartodromoId).HasColumnName("KAR_ID");
             builder.Property(x => x.SentidoId).HasColumnName("SEN_ID");
             builder.Property(x => x.ClimaId).HasColumnName("CLI_ID");
             builder.Property(x => x.MvEstreiaId).HasColumnName("MV_ESTREIA_ID");
