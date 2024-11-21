@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSSK.Controllers
 {
@@ -13,16 +12,15 @@ namespace ApiSSK.Controllers
             var status = new List<StatusModel>()
             {
                 new StatusModel() {
-                    StaId = 1,
-                    StaDesc = "mock 1"
+                    Id = 1,
+                    Descricao = "mock 1"
                 },
                 new StatusModel()
                 {
-                    StaId = 2,
-                    StaDesc = "mock 2"
+                    Id = 2,
+                    Descricao = "mock 2"
                 }
             };
-
             return Ok(status);
         }
     }

@@ -1,5 +1,5 @@
 ﻿public partial class ClimaModel
 {
-    public int CliId { get; set; }
-    public string CliDesc { get; set; } = null!;
+    public int Id { get; set; }
+    public string? Descricao { get; set; }
 }

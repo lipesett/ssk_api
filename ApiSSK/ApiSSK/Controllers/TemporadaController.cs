@@ -11,30 +11,29 @@ namespace ApiSSK.Controllers
         {
             var temporadas = new List<TemporadaModel>() {
                 new TemporadaModel(){
-                    TemId = 1,
-                    TemNumTem = 2024,
-                    TemNome = "Temporada 2024",
-                    TemEtapas = 12,
-                    TemInicio = new DateTime(2024, 1, 15),  // Data de início
-                    TemFinal = new DateTime(2024, 12, 15),   // Data de final
-                    TemAno = 2024,
+                    Id = 1,
+                    NumTem = 2024,
+                    Nome = "Temporada 2024",
+                    Etapas = 12,
+                    Inicio = new DateTime(2024, 1, 15),  // Data de início
+                    Final = new DateTime(2024, 12, 15),   // Data de final
+                    Ano = 2024,
                     StatusId = 1,
-                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel{ Id = 1, Descricao = "Ativo" }
                 },
                 new TemporadaModel()
                 {
-                    TemId = 2,
-                    TemNumTem = 2023,
-                    TemNome = "Temporada 2023",
-                    TemEtapas = 10,
-                    TemInicio = new DateTime(2023, 3, 1),    // Data de início
-                    TemFinal = new DateTime(2023, 11, 30),   // Data de final
-                    TemAno = 2023,
+                    Id = 2,
+                    NumTem = 2023,
+                    Nome = "Temporada 2023",
+                    Etapas = 10,
+                    Inicio = new DateTime(2023, 3, 1),    // Data de início
+                    Final = new DateTime(2023, 11, 30),   // Data de final
+                    Ano = 2023,
                     StatusId = 2,
-                    Status = new StatusModel{ StaId = 2, StaDesc = "Concluído" }
+                    Status = new StatusModel{ Id = 2, Descricao = "Concluído" }
                 }
             };
-
             return Ok(temporadas);
         }
     }

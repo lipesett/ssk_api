@@ -7,22 +7,24 @@ namespace ApiSSK.Data.Map
     {
         public void Configure(EntityTypeBuilder<PilotoModel> builder)
         {
-            builder.HasKey(x => x.PilId);
-            builder.Property(x => x.PilNome).IsRequired().HasMaxLength(40);
-            builder.Property(x => x.PilSobrenome).IsRequired().HasMaxLength(80);
-            builder.Property(x => x.PilPodiums).IsRequired();
-            builder.Property(x => x.PilCorridasOfc).IsRequired();
-            builder.Property(x => x.PilCampeao).IsRequired();
-            builder.Property(x => x.PilMelhorChegada).IsRequired();
-            builder.Property(x => x.PilUltimaTemp).IsRequired();
-            builder.Property(x => x.PilVoltasRapidas).IsRequired();
-            builder.Property(x => x.PilPolePosition).IsRequired();
-            builder.Property(x => x.PilPeso).IsRequired();
-            builder.Property(x => x.PilMelhorQuali).IsRequired();
-            builder.Property(x => x.PilLinksFotos).IsRequired().HasMaxLength(1500);
-            builder.Property(x => x.StatusId).IsRequired();
+            builder.ToTable("PILOTO");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("PIL_ID");
+            builder.Property(x => x.Nome).IsRequired().HasMaxLength(40).HasColumnName("PIL_NOME");
+            builder.Property(x => x.Sobrenome).IsRequired().HasMaxLength(80).HasColumnName("PIL_SOBRENOME");
+            builder.Property(x => x.Podiuns).IsRequired().HasColumnName("PIL_PODIUNS");
+            builder.Property(x => x.CorridasOfc).IsRequired().HasColumnName("PIL_CORRIDAS_OFC");
+            builder.Property(x => x.Campeao).IsRequired().HasColumnName("PIL_CAMPEAO");
+            builder.Property(x => x.MelhorChegada).IsRequired().HasColumnName("PIL_MELHOR_CHEGADA");
+            builder.Property(x => x.UltimaTemp).IsRequired().HasColumnName("PIL_ULTIMA_TEMP");
+            builder.Property(x => x.VoltasRapidas).IsRequired().HasColumnName("PIL_VOLTAS_RAPIDAS");
+            builder.Property(x => x.PolePosition).IsRequired().HasColumnName("PIL_POLE_POSITION");
+            builder.Property(x => x.Peso).IsRequired().HasColumnName("PIL_PESO");
+            builder.Property(x => x.MelhorQuali).IsRequired().HasColumnName("PIL_MELHOR_QUALI");
+            builder.Property(x => x.LinksFotos).IsRequired().HasMaxLength(1500).HasColumnName("PIL_LINKS_FOTOS");
+            builder.Property(x => x.StatusId).IsRequired().HasColumnName("STA_ID");
 
-            builder.HasOne(x => x.Status);
+            builder.HasOne(x => x.Status).WithOne().HasForeignKey<PilotoModel>(x => x.StatusId);
         }
     }
 }

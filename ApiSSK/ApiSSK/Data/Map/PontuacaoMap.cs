@@ -7,12 +7,14 @@ namespace ApiSSK.Data.Map
     {
         public void Configure(EntityTypeBuilder<PontuacaoModel> builder)
         {
-            builder.HasKey(x => x.PonId);
-            builder.Property(x => x.PonPosicao).IsRequired();
-            builder.Property(x => x.PonPontos).IsRequired();
-            builder.Property(x => x.TemporadaId).IsRequired();
+            builder.ToTable("PONTUACAO");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("PON_ID");
+            builder.Property(x => x.Posicao).IsRequired().HasColumnName("PON_POSICAO");
+            builder.Property(x => x.Pontos).IsRequired().HasColumnName("PON_PONTOS");
+            builder.Property(x => x.TemporadaId).IsRequired().HasColumnName("TEM_ID");
 
-            builder.HasOne(x => x.Temporada);
+            builder.HasOne(x => x.Temporada).WithOne().HasForeignKey<PontuacaoModel>(x => x.TemporadaId);
         }
     }
 }

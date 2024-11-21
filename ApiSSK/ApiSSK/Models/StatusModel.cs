@@ -1,5 +1,5 @@
 ﻿public partial class StatusModel
 {
-    public int StaId { get; set; }
-    public string StaDesc { get; set; } = null!;
+    public int Id { get; set; }
+    public string? Descricao { get; set; }
 }

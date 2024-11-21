@@ -8,9 +8,9 @@ namespace ApiSSK.Data.Map
         public void Configure(EntityTypeBuilder<ClimaModel> builder)
         {
             builder.ToTable("CLIMA");
-            builder.HasKey(x => x.CliId);
-            builder.Property(x => x.CliId).HasColumnName("CLI_ID");
-            builder.Property(x => x.CliDesc).IsRequired().HasMaxLength(50).HasColumnName("CLI_DESC");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("CLI_ID");
+            builder.Property(x => x.Descricao).IsRequired().HasMaxLength(50).HasColumnName("CLI_DESC");
         }
     }
 }

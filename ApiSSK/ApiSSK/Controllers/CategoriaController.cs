@@ -13,24 +13,24 @@ namespace ApiSSK.Controllers
             {
                 new CategoriaModel()
                 {
-                    CatId = 1,
-                    CatNome = "Categoria Borracha",
+                    Id = 1,
+                    Nome = "Categoria Borracha",
                     StatusId = 1,
-                    Status = new StatusModel { StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel { Id = 1, Descricao = "Ativo" }
                 },
                 new CategoriaModel()
                 {
-                    CatId = 2,
-                    CatNome = "Categoria Senna",
+                    Id = 2,
+                    Nome = "Categoria Senna",
                     StatusId = 1,
-                    Status = new StatusModel { StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel { Id = 1, Descricao = "Ativo" }
                 },
                 new CategoriaModel()
                 {
-                    CatId = 3,
-                    CatNome = "Categoria Binnoto",
+                    Id = 3,
+                    Nome = "Categoria Binnoto",
                     StatusId = 2,
-                    Status = new StatusModel { StaId = 2, StaDesc = "Inativo" }
+                    Status = new StatusModel { Id = 2, Descricao = "Inativo" }
                 }
             };
 

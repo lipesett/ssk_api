@@ -1,13 +1,13 @@
 ﻿public partial class TemporadaModel
 {
-    public int TemId { get; set; }
-    public int TemNumTem { get; set; }
-    public string TemNome { get; set; } = null!;
-    public int TemEtapas { get; set; }
-    public DateTime TemInicio { get; set; }
-    public DateTime TemFinal { get; set; }
-    public int TemAno { get; set; }
-    public int StatusId { get; set; }
+    public int Id { get; set; }
+    public int NumTem { get; set; }
+    public string? Nome { get; set; }
+    public int Etapas { get; set; }
+    public DateTime Inicio { get; set; }
+    public DateTime Final { get; set; }
+    public int Ano { get; set; }
+    public int? StatusId { get; set; }
 
-    public virtual StatusModel Status { get; set; } = null!;
+    public virtual StatusModel? Status { get; set; }
 }

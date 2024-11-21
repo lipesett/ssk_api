@@ -9,9 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddEntityFrameworkSqlServer()
-    .AddDbContext<DataContext>(
-        options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+
 
 builder.Services.AddScoped<ICalendarioRepository, CalendarioRepository>();
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();

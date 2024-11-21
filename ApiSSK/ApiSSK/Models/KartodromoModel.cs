@@ -1,7 +1,7 @@
 ﻿public partial class KartodromoModel
 {
-    public int KarId { get; set; }
-    public string KarNome { get; set; }
-    public string KarNomCurto { get; set; }
-    public string KarApelido { get; set; }
+    public int Id { get; set; }
+    public string? Nome { get; set; }
+    public string? NomCurto { get; set; }
+    public string? Apelido { get; set; }
 }

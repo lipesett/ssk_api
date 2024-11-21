@@ -19,7 +19,7 @@ namespace ApiSSK.Repositories
 
         public async Task<TracadoModel> GetTracadoById(int id)
         {
-            return await _dbContext.Tracados.FirstOrDefaultAsync(x => x.TraId == id);
+            return await _dbContext.Tracados.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<TracadoModel> AdicionarTracado(TracadoModel tracado)
@@ -39,14 +39,14 @@ namespace ApiSSK.Repositories
                 throw new Exception($"Traçado para o ID: {id} não encontrado.");
             }
 
-            tracadoId.TraNome = tracado.TraNome;
-            tracadoId.TraDataEstreia = tracado.TraDataEstreia;
+            tracadoId.Nome = tracado.Nome;
+            tracadoId.DataEstreia = tracado.DataEstreia;
             tracadoId.KartodromoId = tracado.KartodromoId;
             tracadoId.SentidoId = tracado.SentidoId;
             tracadoId.ClimaId = tracado.ClimaId;
             tracadoId.MvEstreiaId = tracado.MvEstreiaId;
             tracadoId.MvRecordId = tracado.MvRecordId;
-            tracadoId.TraImg = tracado.TraImg;
+            tracadoId.Img = tracado.Img;
 
             _dbContext.Tracados.Update(tracadoId);
             await _dbContext.SaveChangesAsync();

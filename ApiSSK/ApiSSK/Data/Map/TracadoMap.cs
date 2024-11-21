@@ -8,14 +8,14 @@ namespace ApiSSK.Data.Map
         public void Configure(EntityTypeBuilder<TracadoModel> builder)
         {
             builder.ToTable("TRACADOS");
-            builder.HasKey(x => x.TraId);
-            builder.Property(x => x.TraId).HasColumnName("TRA_ID");
-            builder.Property(x => x.TraNome).IsRequired().HasMaxLength(100).HasColumnName("TRA_NOME");
-            builder.Property(x => x.TraDataEstreia).IsRequired().HasColumnName("TRA_DATA_ESTREIA");
-            builder.Property(x => x.TraImg).HasMaxLength(255).HasColumnName("TRA_IMG");
-            builder.Property(x => x.KartodromoId).IsRequired().HasColumnName("KAR_KARTODROMO");
-            builder.Property(x => x.SentidoId).HasColumnName("SEN_SENTIDO");
-            builder.Property(x => x.ClimaId).HasColumnName("CLI_CLIMA");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("TRA_ID");
+            builder.Property(x => x.Nome).IsRequired().HasMaxLength(100).HasColumnName("TRA_NOME");
+            builder.Property(x => x.DataEstreia).IsRequired().HasColumnName("TRA_DATA_ESTREIA");
+            builder.Property(x => x.Img).HasMaxLength(255).HasColumnName("TRA_IMG");
+            builder.Property(x => x.KartodromoId).IsRequired().HasColumnName("KAR_ID");
+            builder.Property(x => x.SentidoId).HasColumnName("SEN_ID");
+            builder.Property(x => x.ClimaId).HasColumnName("CLI_ID");
             builder.Property(x => x.MvEstreiaId).HasColumnName("MV_ESTREIA_ID");
             builder.Property(x => x.MvRecordId).HasColumnName("MV_RECORD_ID");
 

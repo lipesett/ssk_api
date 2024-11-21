@@ -13,19 +13,19 @@ namespace ApiSSK.Controllers
             {
                 new PontuacaoModel()
                 {
-                    PonId = 1,
-                    PonPosicao = 1,
-                    PonPontos = 40,
+                    Id = 1,
+                    Posicao = 1,
+                    Pontos = 40,
                     TemporadaId = 1,
-                    Temporada = new TemporadaModel{ TemId = 1, StatusId = 1 }
+                    Temporada = new TemporadaModel{ Id = 1 }
                 },
                 new PontuacaoModel()
                 {
-                    PonId = 2,
-                    PonPosicao = 1,
-                    PonPontos = 35,
+                    Id = 2,
+                    Posicao = 1,
+                    Pontos = 35,
                     TemporadaId = 1,
-                    Temporada = new TemporadaModel{ TemId = 1, StatusId = 1 }
+                    Temporada = new TemporadaModel{ Id = 1 }
                 },
             };
 

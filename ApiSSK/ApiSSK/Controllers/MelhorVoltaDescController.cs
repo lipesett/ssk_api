@@ -13,28 +13,28 @@ namespace ApiSSK.Controllers
             {
                 new MelhorVoltaDescModel()
                 {
-                    MvdId = 1,
-                    MvdDesc = "Estreia",
+                    Id = 1,
+                    Descricao = "Estreia",
                 },
                 new MelhorVoltaDescModel()
                 {
-                    MvdId = 2,
-                    MvdDesc = "Recorde",
+                    Id = 2,
+                    Descricao = "Recorde",
                 },
                 new MelhorVoltaDescModel()
                 {
-                    MvdId = 3,
-                    MvdDesc = "MV Seco",
+                    Id = 3,
+                    Descricao = "MV Seco",
                 },
                 new MelhorVoltaDescModel()
                 {
-                    MvdId = 4,
-                    MvdDesc = "MV Misto",
+                    Id = 4,
+                    Descricao = "MV Misto",
                 },
                 new MelhorVoltaDescModel()
                 {
-                    MvdId = 5,
-                    MvdDesc = "MV Chuva",
+                    Id = 5,
+                    Descricao = "MV Chuva",
                 }
             };
 

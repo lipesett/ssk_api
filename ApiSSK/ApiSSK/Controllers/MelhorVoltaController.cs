@@ -13,27 +13,27 @@ namespace ApiSSK.Controllers
             {
                 new MelhorVoltaModel()
                 {
-                    MvId = 1,
+                    Id = 1,
                     MelhorVoltaDescId = 1,
-                    MvTempo = "00:54.273",
+                    Tempo = "00:54.273",
                     PilotoId = 1,
                     ClimaId = 1,
                     CalendarioId = 1,
-                    Piloto = new PilotoModel{ PilId = 1 },
-                    Clima = new ClimaModel{ CliId = 1 },
-                    Calendario = new CalendarioModel{ CalId = 1 }
+                    Piloto = new PilotoModel{ Id = 1 },
+                    Clima = new ClimaModel{ Id = 1 },
+                    Calendario = new CalendarioModel{ Id = 1 }
                 },
                 new MelhorVoltaModel()
                 {
-                    MvId = 2,
+                    Id = 2,
                     MelhorVoltaDescId = 2,
-                    MvTempo = "00:53.956",
+                    Tempo = "00:53.956",
                     PilotoId = 2,
                     ClimaId = 1,
                     CalendarioId = 11,
-                    Piloto = new PilotoModel{ PilId = 2 },
-                    Clima = new ClimaModel{ CliId = 1 },
-                    Calendario = new CalendarioModel{ CalId = 11 }
+                    Piloto = new PilotoModel{ Id = 2 },
+                    Clima = new ClimaModel{ Id = 1 },
+                    Calendario = new CalendarioModel{ Id = 11 }
                 }
             };
 

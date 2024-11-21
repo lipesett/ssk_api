@@ -7,8 +7,10 @@ namespace ApiSSK.Data.Map
     {
         public void Configure(EntityTypeBuilder<SentidoModel> builder)
         {
-            builder.HasKey(x => x.SenId);
-            builder.Property(x => x.SenDesc).IsRequired().HasMaxLength(30);
+            builder.ToTable("SENTIDO");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("SEN_ID");
+            builder.Property(x => x.Descricao).IsRequired().HasMaxLength(30).HasColumnName("SEN_DESCRICAO");
         }
     }
 }

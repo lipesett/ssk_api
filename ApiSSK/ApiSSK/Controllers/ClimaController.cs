@@ -38,7 +38,7 @@ namespace ApiSSK.Controllers
         [HttpPost("{id}")]
         public async Task<ActionResult<ClimaModel>> AtualizarClima([FromBody] ClimaModel climaModel, int id)
         {
-            climaModel.CliId = id;
+            climaModel.Id = id;
             ClimaModel clima = await _climaRepository.AtualizarClima(climaModel, id);
             return Ok(clima);
         }

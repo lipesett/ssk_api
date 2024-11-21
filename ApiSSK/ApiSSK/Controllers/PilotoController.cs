@@ -13,39 +13,39 @@ namespace ApiSSK.Controllers
             {
                 new PilotoModel()
                 {
-                    PilId = 1,
-                    PilNome = "Rodrigo",
-                    PilSobrenome = "Poquiviqui",
-                    PilPodiums = 4,
-                    PilCampeao = 1,
-                    PilCorridasOfc = 32,
-                    PilMelhorChegada = 1,
-                    PilPeso = "70.8",
-                    PilMelhorQuali = 1,
-                    PilPolePosition = 4,
-                    PilVoltasRapidas = 2,
-                    PilUltimaTemp = 1,
-                    PilLinksFotos = "www.google.com",
+                    Id = 1,
+                    Nome = "Rodrigo",
+                    Sobrenome = "Poquiviqui",
+                    Podiuns = 4,
+                    Campeao = 1,
+                    CorridasOfc = 32,
+                    MelhorChegada = 1,
+                    Peso = "70.8",
+                    MelhorQuali = 1,
+                    PolePosition = 4,
+                    VoltasRapidas = 2,
+                    UltimaTemp = 1,
+                    LinksFotos = "www.google.com",
                     StatusId = 1,
-                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel{ Id = 1, Descricao = "Ativo" }
                 },
                 new PilotoModel()
                 {
-                    PilId = 1,
-                    PilNome = "Felipe",
-                    PilSobrenome = "Lucas",
-                    PilPodiums = 4,
-                    PilCampeao = 1,
-                    PilCorridasOfc = 32,
-                    PilMelhorChegada = 1,
-                    PilPeso = "65.8",
-                    PilMelhorQuali = 1,
-                    PilPolePosition = 4,
-                    PilVoltasRapidas = 2,
-                    PilUltimaTemp = 1,
-                    PilLinksFotos = "www.google.com",
+                    Id = 1,
+                    Nome = "Felipe",
+                    Sobrenome = "Lucas",
+                    Podiuns = 4,
+                    Campeao = 1,
+                    CorridasOfc = 32,
+                    MelhorChegada = 1,
+                    Peso = "65.8",
+                    MelhorQuali = 1,
+                    PolePosition = 4,
+                    VoltasRapidas = 2,
+                    UltimaTemp = 1,
+                    LinksFotos = "www.google.com",
                     StatusId = 1,
-                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel{ Id = 1, Descricao = "Ativo" }
                 }
             };
 

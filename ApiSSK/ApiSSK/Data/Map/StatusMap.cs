@@ -8,9 +8,9 @@ namespace ApiSSK.Data.Map
         public void Configure(EntityTypeBuilder<StatusModel> builder)
         {
             builder.ToTable("STATUS");
-            builder.HasKey(x => x.StaId);
-            builder.Property(x => x.StaId).HasColumnName("STA_ID");
-            builder.Property(x => x.StaDesc).HasColumnName("STA_DESC").IsRequired().HasMaxLength(30);
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("STA_ID");
+            builder.Property(x => x.Descricao).IsRequired().HasMaxLength(30).HasColumnName("STA_DESCRICAO");
         }
     }
 }

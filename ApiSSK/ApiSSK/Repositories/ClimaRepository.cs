@@ -19,7 +19,7 @@ namespace ApiSSK.Repositories
 
         public async Task<ClimaModel> GetClimaById(int id)
         {
-            return await _dbContext.Climas.FirstOrDefaultAsync(x => x.CliId == id);
+            return await _dbContext.Climas.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<ClimaModel> AdicionarClima(ClimaModel climaModel)
@@ -39,7 +39,7 @@ namespace ApiSSK.Repositories
                 throw new Exception($"Clima para o ID: {id} não encontrado.");
             }
 
-            climaId.CliDesc = climaModel.CliDesc;
+            climaId.Descricao = climaModel.Descricao;
 
             _dbContext.Climas.Update(climaId);
             await _dbContext.SaveChangesAsync();

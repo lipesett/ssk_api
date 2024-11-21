@@ -13,24 +13,24 @@ namespace ApiSSK.Controllers
             {
                 new DivisaoModel()
                 {
-                    DivId = 1,
-                    DivNome = "Divisão 80kg",
+                    Id = 1,
+                    Nome = "Divisão 80kg",
                     StatusId = 1,
-                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel{ Id = 1, Descricao = "Ativo" }
                 },
                 new DivisaoModel()
                 {
-                    DivId = 1,
-                    DivNome = "Divisão 95kg",
+                    Id = 1,
+                    Nome = "Divisão 95kg",
                     StatusId = 1,
-                    Status = new StatusModel{ StaId = 1, StaDesc = "Ativo" }
+                    Status = new StatusModel{ Id = 1, Descricao = "Ativo" }
                 },
                 new DivisaoModel()
                 {
-                    DivId = 1,
-                    DivNome = "Divisão 110kg",
+                    Id = 1,
+                    Nome = "Divisão 110kg",
                     StatusId = 1,
-                    Status = new StatusModel{ StaId = 2, StaDesc = "Inativo" }
+                    Status = new StatusModel{ Id = 2, Descricao = "Inativo" }
                 }
             };
 

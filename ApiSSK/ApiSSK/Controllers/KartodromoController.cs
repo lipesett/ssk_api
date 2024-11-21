@@ -13,17 +13,17 @@ namespace ApiSSK.Controllers
             {
                 new KartodromoModel()
                 {
-                    KarId = 1,
-                    KarNome = "Kartódromo Granja Viana",
-                    KarApelido = "Granja Viana",
-                    KarNomCurto = "KGV"
+                    Id = 1,
+                    Nome = "Kartódromo Granja Viana",
+                    Apelido = "Granja Viana",
+                    NomCurto = "KGV"
                 },
                 new KartodromoModel()
                 {
-                    KarId = 2,
-                    KarNome = "Kartódromo Nova Odessa",
-                    KarApelido = "Nova Odessa",
-                    KarNomCurto = "KNO"
+                    Id = 2,
+                    Nome = "Kartódromo Nova Odessa",
+                    Apelido = "Nova Odessa",
+                    NomCurto = "KNO"
                 }
             };
 

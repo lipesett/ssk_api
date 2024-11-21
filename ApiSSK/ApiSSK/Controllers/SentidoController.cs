@@ -13,13 +13,13 @@ namespace ApiSSK.Controllers
             {
                 new SentidoModel()
                 {
-                    SenId = 1,
-                    SenDesc = "Horário"
+                    Id = 1,
+                    Descricao = "Horário"
                 },
                 new SentidoModel()
                 {
-                    SenId = 2,
-                    SenDesc = "Anti-Horário"
+                    Id = 2,
+                    Descricao = "Anti-Horário"
                 }
             };
 

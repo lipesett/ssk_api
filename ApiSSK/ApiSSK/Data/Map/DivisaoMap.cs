@@ -7,11 +7,13 @@ namespace ApiSSK.Data.Map
     {
         public void Configure(EntityTypeBuilder<DivisaoModel> builder)
         {
-            builder.HasKey(x => x.DivId);
-            builder.Property(x => x.DivNome).IsRequired().HasMaxLength(20);
-            builder.Property(x => x.StatusId).IsRequired();
+            builder.ToTable("DIVISOES");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("DIV_ID");
+            builder.Property(x => x.Nome).IsRequired().HasMaxLength(20).HasColumnName("DIV_NOME");
+            builder.Property(x => x.StatusId).IsRequired().HasColumnName("STA_ID");
 
-            builder.HasOne(x => x.Status);
+            builder.HasOne(x => x.Status).WithOne().HasForeignKey<DivisaoModel>(x => x.StatusId);
         }
     }
 }

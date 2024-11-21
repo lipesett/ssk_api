@@ -13,27 +13,27 @@ namespace ApiSSK.Controllers
             {
                 new PontuacaoPilotoEtapaModel()
                 {
-                    PpeId = 1,
+                    Id = 1,
                     PilotoId = 1,
                     CalendarioId = 1,
                     PontuacaoId = 1,
-                    PpeTempoMelhorVolta = "01:23.456",
+                    TempoMelhorVolta = "01:23.456",
                     MelhorVolta = true,
-                    Piloto = new PilotoModel(){ PilId = 1 },
-                    Calendario = new CalendarioModel(){ CalId = 1 },
-                    Pontuacao = new PontuacaoModel(){ PonId = 1 }
+                    Piloto = new PilotoModel(){ Id = 1 },
+                    Calendario = new CalendarioModel(){ Id = 1 },
+                    Pontuacao = new PontuacaoModel(){ Id = 1 }
                 },
                 new PontuacaoPilotoEtapaModel()
                 {
-                    PpeId = 2,
+                    Id = 2,
                     PilotoId = 2,
                     CalendarioId = 2,
                     PontuacaoId = 2,
-                    PpeTempoMelhorVolta = "01:24.789",
+                    TempoMelhorVolta = "01:24.789",
                     MelhorVolta = false,
-                    Piloto = new PilotoModel(){ PilId = 2 },
-                    Calendario = new CalendarioModel(){ CalId = 2 },
-                    Pontuacao = new PontuacaoModel(){ PonId = 2 }
+                    Piloto = new PilotoModel(){ Id = 2 },
+                    Calendario = new CalendarioModel(){ Id = 2 },
+                    Pontuacao = new PontuacaoModel(){ Id = 2 }
                 }
             };
 

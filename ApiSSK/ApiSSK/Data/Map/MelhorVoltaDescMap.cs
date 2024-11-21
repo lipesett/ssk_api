@@ -7,8 +7,10 @@ namespace ApiSSK.Data.Map
     {
         public void Configure(EntityTypeBuilder<MelhorVoltaDescModel> builder)
         {
-            builder.HasKey(x => x.MvdId);
-            builder.Property(x => x.MvdDesc).IsRequired().HasMaxLength(25);
+            builder.ToTable("MELHOR_VOLTA_DESC");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("MVD_ID");
+            builder.Property(x => x.Descricao).IsRequired().HasMaxLength(25).HasColumnName("MVD_DESCRICAO");
         }
     }
 }
