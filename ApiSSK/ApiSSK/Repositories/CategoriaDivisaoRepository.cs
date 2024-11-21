@@ -18,7 +18,17 @@ namespace ApiSSK.Repositories
 
         public async Task<CategoriaDivisaoModel> GetCategoriaDivisaoById(int id)
         {
-            return await _dbContext.CategoriasDivisoes.FirstOrDefaultAsync(x => x.CategoriaId == id);
+            var result = await _dbContext.CategoriasDivisoes
+                .Include(x => x.Categoria)
+                .Include(x => x.Divisao)
+                .FirstOrDefaultAsync(x => x.CategoriaId == id);
+
+            if (result == null)
+            {
+                throw new KeyNotFoundException($"Categoria_Divisao {id} não encontrada.");
+            }
+
+            return result;
         }
 
         public async Task<CategoriaDivisaoModel> AdicionarCategoriaDivisao(CategoriaDivisaoModel categoriaDivisaoModel)
