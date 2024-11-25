@@ -12,9 +12,12 @@ namespace ApiSSK.Repositories
             _dbContext = dataContext;
         }
 
-        public Task<DivisaoModel> AdicionarDivisao(DivisaoModel DivisaoModel)
+        public async Task<DivisaoModel> AdicionarDivisao(DivisaoModel divisaoModel)
         {
-            throw new NotImplementedException();
+            await _dbContext.Divisoes.AddAsync(divisaoModel);
+            await _dbContext.SaveChangesAsync();
+            
+            return divisaoModel;
         }
 
         public Task<DivisaoModel> AtualizarDivisao(DivisaoModel DivisaoModel, int id)
@@ -32,9 +35,9 @@ namespace ApiSSK.Repositories
             return await _dbContext.Divisoes.ToListAsync();
         }
 
-        public Task<DivisaoModel> GetDivisaoById(int id)
+        public async Task<DivisaoModel> GetDivisaoById(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Divisoes.FindAsync(id);
         }
     }
 }

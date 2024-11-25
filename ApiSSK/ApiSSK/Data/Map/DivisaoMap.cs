@@ -11,9 +11,9 @@ namespace ApiSSK.Data.Map
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("DIV_ID");
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(20).HasColumnName("DIV_NOME");
-            builder.Property(x => x.StatusId).HasColumnName("STA_ID");
+            builder.Property(x => x.Status).HasColumnName("STATUS").HasColumnType("INT").IsRequired();
 
-            builder.HasOne(x => x.Status).WithOne().HasForeignKey<DivisaoModel>(x => x.StatusId);
+            //builder.HasOne(x => x.Status).WithOne().HasForeignKey<DivisaoModel>(x => x.StatusId);
         }
     }
 }

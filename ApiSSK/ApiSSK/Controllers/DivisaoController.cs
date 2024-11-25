@@ -19,5 +19,16 @@ namespace ApiSSK.Controllers
         {
             return await _divisaoRepository.GetAllDivisoes();
         }
+
+        [HttpPost]
+        public async Task<ActionResult<DivisaoModel>> AddDivisao(DivisaoModel divisao)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
+            return await _divisaoRepository.AdicionarDivisao(divisao);
+        }
     }
 }

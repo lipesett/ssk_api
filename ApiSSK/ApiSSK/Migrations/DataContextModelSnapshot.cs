@@ -182,15 +182,11 @@ namespace ApiSSK.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("DIV_NOME");
 
-                    b.Property<int?>("StatusId")
-                        .HasColumnType("int")
-                        .HasColumnName("STA_ID");
+                    b.Property<int>("Status")
+                        .HasColumnType("INT")
+                        .HasColumnName("STATUS");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StatusId")
-                        .IsUnique()
-                        .HasFilter("[STA_ID] IS NOT NULL");
 
                     b.ToTable("DIVISOES", (string)null);
                 });
@@ -708,15 +704,6 @@ namespace ApiSSK.Migrations
                     b.HasOne("StatusModel", "Status")
                         .WithOne()
                         .HasForeignKey("CategoriaModel", "StatusId");
-
-                    b.Navigation("Status");
-                });
-
-            modelBuilder.Entity("DivisaoModel", b =>
-                {
-                    b.HasOne("StatusModel", "Status")
-                        .WithOne()
-                        .HasForeignKey("DivisaoModel", "StatusId");
 
                     b.Navigation("Status");
                 });
