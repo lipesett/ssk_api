@@ -1,4 +1,6 @@
-﻿public partial class PilotoModel
+﻿using ApiSSK.Models.Enums;
+
+public partial class PilotoModel
 {
     public int Id { get; set; }
     public string? Nome { get; set; }
@@ -13,7 +15,5 @@
     public string? Peso { get; set; }
     public int MelhorQuali { get; set; }
     public string? LinksFotos { get; set; }
-    public int? StatusId { get; set; }
-
-    public virtual StatusModel? Status { get; set; }
+    public EStatus Status { get; set; }
 }

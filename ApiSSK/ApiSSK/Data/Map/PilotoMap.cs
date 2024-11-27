@@ -22,9 +22,7 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Peso).IsRequired().HasColumnName("PIL_PESO");
             builder.Property(x => x.MelhorQuali).IsRequired().HasColumnName("PIL_MELHOR_QUALI");
             builder.Property(x => x.LinksFotos).IsRequired().HasMaxLength(1500).HasColumnName("PIL_LINKS_FOTOS");
-            builder.Property(x => x.StatusId).HasColumnName("STA_ID");
-
-            builder.HasOne(x => x.Status).WithOne().HasForeignKey<PilotoModel>(x => x.StatusId);
+            builder.Property(x => x.Status).HasColumnName("STATUS").IsRequired();
         }
     }
 }
