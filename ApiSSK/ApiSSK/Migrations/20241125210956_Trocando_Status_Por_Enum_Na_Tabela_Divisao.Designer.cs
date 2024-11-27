@@ -4,6 +4,7 @@ using ApiSSK.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiSSK.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20241125210956_Trocando_Status_Por_Enum_Na_Tabela_Divisao")]
+    partial class Trocando_Status_Por_Enum_Na_Tabela_Divisao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,11 +137,15 @@ namespace ApiSSK.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("CAT_NOME");
 
-                    b.Property<int>("Status")
+                    b.Property<int?>("StatusId")
                         .HasColumnType("int")
-                        .HasColumnName("STATUS");
+                        .HasColumnName("STA_ID");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StatusId")
+                        .IsUnique()
+                        .HasFilter("[STA_ID] IS NOT NULL");
 
                     b.ToTable("CATEGORIAS", (string)null);
                 });
@@ -179,7 +186,7 @@ namespace ApiSSK.Migrations
                         .HasColumnName("DIV_NOME");
 
                     b.Property<int>("Status")
-                        .HasColumnType("int")
+                        .HasColumnType("INT")
                         .HasColumnName("STATUS");
 
                     b.HasKey("Id");
@@ -401,9 +408,9 @@ namespace ApiSSK.Migrations
                         .HasColumnType("nvarchar(80)")
                         .HasColumnName("PIL_SOBRENOME");
 
-                    b.Property<int>("Status")
+                    b.Property<int?>("StatusId")
                         .HasColumnType("int")
-                        .HasColumnName("STATUS");
+                        .HasColumnName("STA_ID");
 
                     b.Property<int>("UltimaTemp")
                         .HasColumnType("int")
@@ -414,6 +421,10 @@ namespace ApiSSK.Migrations
                         .HasColumnName("PIL_VOLTAS_RAPIDAS");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StatusId")
+                        .IsUnique()
+                        .HasFilter("[STA_ID] IS NOT NULL");
 
                     b.ToTable("PILOTO", (string)null);
                 });
@@ -515,6 +526,26 @@ namespace ApiSSK.Migrations
                     b.ToTable("SENTIDO", (string)null);
                 });
 
+            modelBuilder.Entity("StatusModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("STA_ID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("STA_DESCRICAO");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("STATUS", (string)null);
+                });
+
             modelBuilder.Entity("TemporadaModel", b =>
                 {
                     b.Property<int>("Id")
@@ -550,11 +581,15 @@ namespace ApiSSK.Migrations
                         .HasColumnType("int")
                         .HasColumnName("TEM_NUMTEM");
 
-                    b.Property<int>("Status")
+                    b.Property<int?>("StatusId")
                         .HasColumnType("int")
-                        .HasColumnName("STATUS");
+                        .HasColumnName("STA_ID");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StatusId")
+                        .IsUnique()
+                        .HasFilter("[STA_ID] IS NOT NULL");
 
                     b.ToTable("TEMPORADAS", (string)null);
                 });
@@ -667,6 +702,15 @@ namespace ApiSSK.Migrations
                     b.Navigation("Divisao");
                 });
 
+            modelBuilder.Entity("CategoriaModel", b =>
+                {
+                    b.HasOne("StatusModel", "Status")
+                        .WithOne()
+                        .HasForeignKey("CategoriaModel", "StatusId");
+
+                    b.Navigation("Status");
+                });
+
             modelBuilder.Entity("InscricaoModel", b =>
                 {
                     b.HasOne("CategoriaModel", "Categoria")
@@ -721,6 +765,15 @@ namespace ApiSSK.Migrations
                     b.Navigation("Piloto");
                 });
 
+            modelBuilder.Entity("PilotoModel", b =>
+                {
+                    b.HasOne("StatusModel", "Status")
+                        .WithOne()
+                        .HasForeignKey("PilotoModel", "StatusId");
+
+                    b.Navigation("Status");
+                });
+
             modelBuilder.Entity("PontuacaoModel", b =>
                 {
                     b.HasOne("TemporadaModel", "Temporada")
@@ -749,6 +802,15 @@ namespace ApiSSK.Migrations
                     b.Navigation("Piloto");
 
                     b.Navigation("Pontuacao");
+                });
+
+            modelBuilder.Entity("TemporadaModel", b =>
+                {
+                    b.HasOne("StatusModel", "Status")
+                        .WithOne()
+                        .HasForeignKey("TemporadaModel", "StatusId");
+
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("TracadoModel", b =>

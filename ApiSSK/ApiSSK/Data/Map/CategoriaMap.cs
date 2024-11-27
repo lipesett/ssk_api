@@ -11,9 +11,7 @@ namespace ApiSSK.Data.Map
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("CAT_ID");
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(50).HasColumnName("CAT_NOME");
-            builder.Property(x => x.StatusId).HasColumnName("STA_ID");
-
-            builder.HasOne(x => x.Status).WithOne().HasForeignKey<CategoriaModel>(x => x.StatusId);
+            builder.Property(x => x.Status).HasColumnName("STATUS").IsRequired();
         }
     }
 }
