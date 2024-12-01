@@ -20,22 +20,55 @@ namespace ApiSSK.Repositories
 
         public async Task<CalendarioModel> GetCalendarioById(int id)
         {
-            return await _dbContext.Calendarios.FirstOrDefaultAsync();
+            var calendario = await _dbContext.Calendarios.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (calendario == null)
+            {
+                throw new Exception($"Calendário de {id} não foi encontrado no banco de dados.");
+            }
+
+            return calendario;
         }
 
-        public Task<CalendarioModel> AdicionarCalendario(CalendarioModel calendarioModel)
+        public async Task<CalendarioModel> AdicionarCalendario(CalendarioModel calendarioModel)
         {
-            throw new NotImplementedException();
+            await _dbContext.Calendarios.AddAsync(calendarioModel);
+            await _dbContext.SaveChangesAsync();
+
+            return calendarioModel;
         }
 
-        public Task<CalendarioModel> AtualizarCalendario(CalendarioModel calendarioModel, int id)
+        public async Task<CalendarioModel> AtualizarCalendario(CalendarioModel calendarioModel, int id)
         {
-            throw new NotImplementedException();
+            CalendarioModel calendarioId = await GetCalendarioById(id);
+
+            calendarioId.NomeEtapa = calendarioModel.NomeEtapa;
+            calendarioId.NumEtapa = calendarioModel.NumEtapa;
+            calendarioId.Dia = calendarioModel.Dia;
+            calendarioId.Mes = calendarioModel.Mes;
+            calendarioId.Ano = calendarioModel.Ano;
+            calendarioId.DataCompleta = calendarioModel.DataCompleta;
+            calendarioId.Horario = calendarioModel.Horario;
+            calendarioId.PtsDisputados = calendarioModel.PtsDisputados;
+            calendarioId.EtapaRealizada = calendarioModel.EtapaRealizada;
+            calendarioId.TracadoId = calendarioModel.TracadoId;
+            calendarioId.TemporadaId = calendarioModel.TemporadaId;
+            calendarioId.PilotoId = calendarioModel.PilotoId;
+
+            _dbContext.Calendarios.Update(calendarioId);
+            await _dbContext.SaveChangesAsync();
+
+            return calendarioId;
         }
 
-        public Task<bool> DeletarCalendario(int id)
+        public async Task<bool> DeletarCalendario(int id)
         {
-            throw new NotImplementedException();
+            CalendarioModel calendarioId = await GetCalendarioById(id);
+
+            _dbContext.Calendarios.Remove(calendarioId);
+            await _dbContext.SaveChangesAsync();
+
+            return true;
         }
     }
 }
