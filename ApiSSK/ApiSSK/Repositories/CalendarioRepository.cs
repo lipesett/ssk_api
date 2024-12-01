@@ -20,7 +20,11 @@ namespace ApiSSK.Repositories
 
         public async Task<CalendarioModel> GetCalendarioById(int id)
         {
-            var calendario = await _dbContext.Calendarios.FirstOrDefaultAsync(x => x.Id == id);
+            var calendario = await _dbContext.Calendarios
+                .Include(c => c.Tracado)
+                .Include(c => c.Temporada)
+                .Include(c => c.Piloto)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (calendario == null)
             {
