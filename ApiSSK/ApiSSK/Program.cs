@@ -25,7 +25,6 @@ builder.Services.AddScoped<IMelhorVoltaDescRepository, MelhorVoltaDescRepository
 builder.Services.AddScoped<IPilotoRepository, PilotoRepository>();
 builder.Services.AddScoped<IPontuacaoRepository, PontuacaoRepository>();
 builder.Services.AddScoped<IPontuacaoPilotoEtapaRepository, PontuacaoPilotoEtapaRepository>();
-builder.Services.AddScoped<ISentidoRepository, SentidoRepository>();
 builder.Services.AddScoped<ITemporadaRepository, TemporadaRepository>();
 builder.Services.AddScoped<ITracadoRepository, TracadoRepository>();
 

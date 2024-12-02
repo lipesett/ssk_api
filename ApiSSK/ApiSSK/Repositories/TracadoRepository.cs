@@ -42,11 +42,11 @@ namespace ApiSSK.Repositories
             tracadoId.Nome = tracado.Nome;
             tracadoId.DataEstreia = tracado.DataEstreia;
             tracadoId.KartodromoId = tracado.KartodromoId;
-            tracadoId.SentidoId = tracado.SentidoId;
             tracadoId.ClimaId = tracado.ClimaId;
             tracadoId.MvEstreiaId = tracado.MvEstreiaId;
             tracadoId.MvRecordId = tracado.MvRecordId;
             tracadoId.Img = tracado.Img;
+            tracadoId.Sentido = tracado.Sentido;
 
             _dbContext.Tracados.Update(tracadoId);
             await _dbContext.SaveChangesAsync();
