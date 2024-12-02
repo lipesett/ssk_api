@@ -1,6 +1,5 @@
 ﻿using ApiSSK.Data;
 using ApiSSK.Repositories.Interfaces;
-using Azure.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiSSK.Repositories
