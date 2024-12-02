@@ -21,7 +21,6 @@ namespace ApiSSK.Data
         public DbSet<PilotoModel> Pilotos { get; set; }
         public DbSet<PontuacaoModel> Pontuacoes { get; set; }
         public DbSet<PontuacaoPilotoEtapaModel> PontuacoesEtapa { get; set; }
-        public DbSet<SentidoModel> Sentidos { get; set; }
         public DbSet<TemporadaModel> Temporadas { get; set; }
         public DbSet<TracadoModel> Tracados { get; set; }
 
@@ -39,7 +38,6 @@ namespace ApiSSK.Data
             modelBuilder.ApplyConfiguration(new PilotoMap());
             modelBuilder.ApplyConfiguration(new PontuacaoMap());
             modelBuilder.ApplyConfiguration(new PontuacaoPilotoEtapaMap());
-            modelBuilder.ApplyConfiguration(new SentidoMap());
             modelBuilder.ApplyConfiguration(new TemporadaMap());
             modelBuilder.ApplyConfiguration(new TracadoMap());
 

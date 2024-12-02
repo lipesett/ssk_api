@@ -4,6 +4,7 @@ using ApiSSK.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiSSK.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20241202170751_TornandoEntidadeSentidoEmEnum")]
+    partial class TornandoEntidadeSentidoEmEnum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -582,6 +585,10 @@ namespace ApiSSK.Migrations
                     b.Property<int>("Sentido")
                         .HasColumnType("int")
                         .HasColumnName("SENTIDO");
+
+                    b.Property<int?>("SentidoId")
+                        .HasColumnType("int")
+                        .HasColumnName("SEN_ID");
 
                     b.HasKey("Id");
 

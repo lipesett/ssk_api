@@ -19,5 +19,16 @@ namespace ApiSSK.Controllers
         {
             return await _tracadoRepository.GetAllTracados();
         }
+
+        [HttpPost]
+        public async Task<ActionResult<TracadoModel>> AddTracado(TracadoModel divisao)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return await _tracadoRepository.AdicionarTracado(divisao);
+        }
     }
 }
