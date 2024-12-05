@@ -143,26 +143,6 @@ namespace ApiSSK.Migrations
                     b.ToTable("CATEGORIAS", (string)null);
                 });
 
-            modelBuilder.Entity("ClimaModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("CLI_ID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("CLI_DESC");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CLIMA", (string)null);
-                });
-
             modelBuilder.Entity("DivisaoModel", b =>
                 {
                     b.Property<int>("Id")
@@ -306,9 +286,9 @@ namespace ApiSSK.Migrations
                         .HasColumnType("int")
                         .HasColumnName("CAL_ID");
 
-                    b.Property<int?>("ClimaId")
+                    b.Property<int>("Clima")
                         .HasColumnType("int")
-                        .HasColumnName("CLI_ID");
+                        .HasColumnName("CLIMA");
 
                     b.Property<int?>("MelhorVoltaDescId")
                         .HasColumnType("int")
@@ -329,10 +309,6 @@ namespace ApiSSK.Migrations
                     b.HasIndex("CalendarioId")
                         .IsUnique()
                         .HasFilter("[CAL_ID] IS NOT NULL");
-
-                    b.HasIndex("ClimaId")
-                        .IsUnique()
-                        .HasFilter("[CLI_ID] IS NOT NULL");
 
                     b.HasIndex("MelhorVoltaDescId")
                         .IsUnique()
@@ -548,9 +524,9 @@ namespace ApiSSK.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("ClimaId")
+                    b.Property<int>("Clima")
                         .HasColumnType("int")
-                        .HasColumnName("CLI_ID");
+                        .HasColumnName("CLIMA");
 
                     b.Property<DateTime>("DataEstreia")
                         .HasColumnType("datetime2")
@@ -584,10 +560,6 @@ namespace ApiSSK.Migrations
                         .HasColumnName("SENTIDO");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClimaId")
-                        .IsUnique()
-                        .HasFilter("[CLI_ID] IS NOT NULL");
 
                     b.HasIndex("KartodromoId")
                         .IsUnique();
@@ -676,10 +648,6 @@ namespace ApiSSK.Migrations
                         .WithOne()
                         .HasForeignKey("MelhorVoltaModel", "CalendarioId");
 
-                    b.HasOne("ClimaModel", "Clima")
-                        .WithOne()
-                        .HasForeignKey("MelhorVoltaModel", "ClimaId");
-
                     b.HasOne("MelhorVoltaDescModel", "MelhorVoltaDesc")
                         .WithOne()
                         .HasForeignKey("MelhorVoltaModel", "MelhorVoltaDescId");
@@ -689,8 +657,6 @@ namespace ApiSSK.Migrations
                         .HasForeignKey("MelhorVoltaModel", "PilotoId");
 
                     b.Navigation("Calendario");
-
-                    b.Navigation("Clima");
 
                     b.Navigation("MelhorVoltaDesc");
 
@@ -729,10 +695,6 @@ namespace ApiSSK.Migrations
 
             modelBuilder.Entity("TracadoModel", b =>
                 {
-                    b.HasOne("ClimaModel", "Clima")
-                        .WithOne()
-                        .HasForeignKey("TracadoModel", "ClimaId");
-
                     b.HasOne("KartodromoModel", "Kartodromo")
                         .WithOne()
                         .HasForeignKey("TracadoModel", "KartodromoId")
@@ -746,8 +708,6 @@ namespace ApiSSK.Migrations
                     b.HasOne("MelhorVoltaModel", "MvRecord")
                         .WithOne()
                         .HasForeignKey("TracadoModel", "MvRecordId");
-
-                    b.Navigation("Clima");
 
                     b.Navigation("Kartodromo");
 
