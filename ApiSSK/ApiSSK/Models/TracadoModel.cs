@@ -10,9 +10,9 @@ public partial class TracadoModel
     public int? MvRecordId { get; set; }
     public string? Img { get; set; }
     public ESentido Sentido { get; set; }
+    public EClima Clima { get; set; }
     
     public virtual KartodromoModel? Kartodromo { get; set; }
-    public virtual EClima Clima { get; set; }
     public virtual MelhorVoltaModel? MvEstreia { get; set; }
     public virtual MelhorVoltaModel? MvRecord { get; set; }
 }
