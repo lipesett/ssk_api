@@ -13,12 +13,11 @@ namespace ApiSSK.Data.Map
             builder.Property(x => x.Tempo).IsRequired().HasMaxLength(25).HasColumnName("MV_TEMPO");
             builder.Property(x => x.MelhorVoltaDescId).HasColumnName("MVD_ID");
             builder.Property(x => x.PilotoId).HasColumnName("PIL_ID");
-            builder.Property(x => x.ClimaId).HasColumnName("CLI_ID");
             builder.Property(x => x.CalendarioId).HasColumnName("CAL_ID");
+            builder.Property(x => x.Clima).HasColumnName("CLIMA").IsRequired();
 
             builder.HasOne(x => x.MelhorVoltaDesc).WithOne().HasForeignKey<MelhorVoltaModel>(x => x.MelhorVoltaDescId);
             builder.HasOne(x => x.Piloto).WithOne().HasForeignKey<MelhorVoltaModel>(x => x.PilotoId);
-            builder.HasOne(x => x.Clima).WithOne().HasForeignKey<MelhorVoltaModel>(x => x.ClimaId);
             builder.HasOne(x => x.Calendario).WithOne().HasForeignKey<MelhorVoltaModel>(x => x.CalendarioId);
         }
     }

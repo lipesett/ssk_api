@@ -16,7 +16,6 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddScoped<ICalendarioRepository, CalendarioRepository>();
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<ICategoriaDivisaoRepository, CategoriaDivisaoRepository>();
-builder.Services.AddScoped<IClimaRepository, ClimaRepository>();
 builder.Services.AddScoped<IDivisaoRepository, DivisaoRepository>();
 builder.Services.AddScoped<IInscricaoRepository, InscricaoRepository>();
 builder.Services.AddScoped<IKartodromoRepository, KartodromoRepository>();

@@ -12,7 +12,7 @@ namespace ApiSSK.Data
         public DbSet<CalendarioModel> Calendarios { get; set; }
         public DbSet<CategoriaModel> Categorias { get; set; }
         public DbSet<CategoriaDivisaoModel> CategoriasDivisoes { get; set; }
-        public DbSet<ClimaModel> Climas { get; set; }
+
         public DbSet<DivisaoModel> Divisoes { get; set; }
         public DbSet<InscricaoModel> Inscricoes { get; set; }
         public DbSet<KartodromoModel> Kartodromos { get; set; }
@@ -29,7 +29,6 @@ namespace ApiSSK.Data
             modelBuilder.ApplyConfiguration(new CalendarioMap());
             modelBuilder.ApplyConfiguration(new CategoriaDivisaoMap());
             modelBuilder.ApplyConfiguration(new CategoriaMap());
-            modelBuilder.ApplyConfiguration(new ClimaMap());
             modelBuilder.ApplyConfiguration(new DivisaoMap());
             modelBuilder.ApplyConfiguration(new InscricaoMap());
             modelBuilder.ApplyConfiguration(new KartodromoMap());
